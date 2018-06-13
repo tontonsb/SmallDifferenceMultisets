@@ -1,0 +1,1 @@
+Kompilējam ar XeLaTeX un BibTeX.

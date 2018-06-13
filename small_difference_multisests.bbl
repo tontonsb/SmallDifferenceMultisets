@@ -1,0 +1,46 @@
+\begin{thebibliography}{1}
+
+\bibitem{arasu2005regular}
+KT~Arasu, Ashwani~K Bhandari, Siu-Lun Ma, and Surinder Sehgal.
+\newblock Regular difference covers.
+\newblock {\em Kyungpook Math. J}, 45:137--152, 2005.
+
+\bibitem{arasu2005cyclic}
+KT~Arasu and Surinder Sehgal.
+\newblock Cyclic difference covers.
+\newblock {\em Austral. J. Combin}, 32:213--223, 2005.
+
+\bibitem{buratti1999old}
+Marco Buratti.
+\newblock Old and new designs via difference multisets and strong difference
+  families.
+\newblock {\em Journal of Combinatorial Designs}, 7(6):406--425, 1999.
+
+\bibitem{haanpaa2004minimum}
+Harri Haanp{\"a}{\"a}.
+\newblock Minimum sum and difference covers of abelian groups.
+\newblock {\em Journal of Integer Sequences}, 7(2):3, 2004.
+
+\bibitem{marmon2005hexagonal}
+Oscar Marmon.
+\newblock Hexagonal lattice points on circles.
+\newblock {\em arXiv preprint math/0508201}, 2005.
+
+\bibitem{momihara2009strong}
+Koji Momihara.
+\newblock Strong difference families, difference covers, and their applications
+  for relative difference families.
+\newblock {\em Designs, Codes and Cryptography}, 51(3):253--273, 2009.
+
+\bibitem{nair2004elementary}
+Umesh~P Nair.
+\newblock Elementary results on the binary quadratic form a\^{} 2+ ab+ b\^{} 2.
+\newblock {\em arXiv preprint math/0408107}, 2004.
+
+\bibitem{oeisA003136}
+Neil James~Alexander Sloane.
+\newblock The {O}n-{L}ine {E}ncyclopedia of {I}nteger {S}equences.
+\newblock \href{https://oeis.org}.
+\newblock Sequence \href{https://oeis.org/A003136}{A003136}.
+
+\end{thebibliography}
