@@ -43,4 +43,9 @@ Neil James~Alexander Sloane.
 \newblock \href{https://oeis.org}.
 \newblock Sequence \href{https://oeis.org/A003136}{A003136}.
 
+\bibitem{wiki:circulant_matrix}
+{Wikipedia contributors}.
+\newblock Circulant matrix --- {Wikipedia}{,} the free encyclopedia, 2018.
+\newblock [Online; accessed 19-September-2018].
+
 \end{thebibliography}

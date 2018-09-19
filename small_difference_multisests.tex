@@ -57,7 +57,7 @@
         
         The results in the foundational articles are mostly analogous to those of difference sets, almost all of the constructions are using some difference set construction. As a result the number of constructed difference multisets is proportional to that of difference sets which is unlikely to reflect the real situation as there are infinitely more multisets over a given finite $G$ than there are subsets. Some constructions producing difference multisets of arbitrary size over fixed $G$ were uncovered in \cite{momihara2009strong} and we strive to expand in this direction---constructing arbitrarily large multisets in a fixed, mainly small algebra.
     
-	\section{Difference multisets and notation used}
+	\section{Definitions and notation used}
     
         Let's start by introducing a notation.
         
@@ -147,7 +147,7 @@
 		Thus it is a bit simpler to find a solution, but the cost is that we must afterwards test if the solution produces integer $n_i$'s.
 		
 		\begin{remark}
-            System \eqref{apparatus:eq:dsystem} can be rewritten in the informal matrix form as
+            System \eqref{apparatus:eq:dsystem_general} can be rewritten in the informal matrix form as
             \begin{equation}
                 \label{apparatus:eq:dmatrixform}
                 Cg=\bf v
@@ -217,7 +217,7 @@
             \end{figure}
             
         \subsection{A universal regular construction}
-            We have discovered a construction that works whenever $k$ is close to a multiple of $v$.
+            Based on particular results discussed further, we have discovered a construction that works whenever $k$ is close to a multiple of $v$.
             
             \begin{theorem}
                 \label{regular:theorem:regular}
@@ -246,9 +246,138 @@
             
                 It is straightforward to check that \eqref{apparatus:eq:di} turns out true as well.
             \end{proof}
+        
+        \subsection{Difference multisets for cyclic groups of even size}
+            For loops we can rewrite \eqref{apparatus:eq:dmatrixform}:
+            
+            \begin{equation}
+                C g' = \bf v'
+            \end{equation}\
+            where $g'_q: i \rightarrow (d_i d_q)$ and $v'_q = v(v\delta_{q0}-1)$.
+            
+            As the operation of $g'$ is pretty trivial, we can write it even more nicely:
+            
+            \begin{equation}
+                D d = \bf v'
+            \end{equation}
+                where $D_{ij} = d_{C_{ij}}$ (i.e. replace elements in Cayley table with their digressions) and $d_q = d_q$.
+
+            As the title suggests, we will be dealing with cyclic groups in this section. That's because of the nice Cayley table they possess. The Cayley table of cyclic groups of size $v$ takes the following form:
+            
+            \begin{equation}
+                \label{general:eq:anticirculant_matrix}
+                \begin{pmatrix}
+                    0 & 1 & 2 & \cdots & v-2 & v-1 \\ 
+                    1 & 2 & 3 & \cdots & v-1 & 0 \\
+                    \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+                    v-2 & v-1 & 0 & \cdots & v-4 & v-3 \\
+                    v-1 & 0 & 1 & \cdots & v-3 & v-2
+                \end{pmatrix}
+            \end{equation}
+	
+            This is a special case of Hankel matrix sometimes called \emph{anticirculant matrix}. The structure of the corresponding $D$ will be the same.
+            
+            \subsubsection{Solving equations with anticirculant matrices}
+            \label{general:sec:anticirculant}
+                We weren't able to track down a source dealing with matrices like \eqref{general:eq:anticirculant_matrix}, however it's fairly straightforward to apply the same methods as with circulant matrices \cite{wiki:circulant_matrix}.
+                
+                Let's consider the equation $Ax=b$ with an anticirculant $v \times v$ matrix
+                \begin{equation}
+                    A =
+                    \begin{pmatrix}
+                        a_0 & a_1 & a_2 & \cdots & a_{v-1} \\ 
+                        a_1 & a_2 & a_3 & \cdots & a_0 \\
+                        a_2 & a_3 & a_4 & \cdots & a_1 \\
+                        \vdots & \vdots & \vdots & \ddots & \vdots \\
+                    \end{pmatrix}
+                \end{equation}\
+                and a vector $b=(b_0, b_1, b_2, \vdots)^T$. 
+                
+                Denote $a=(a_1,\ldots,a_{v-1})$. We can now express the equation row by row (please consider indices $\mod v$):
+                \begin{equation}
+                    b_j = \sum_{k=0}^{v-1} a_{j+k} x_k
+                \end{equation}
+                
+                Apply discrete Fourier transform:
+                \begin{equation}
+                    \mathcal{F} (b)_m = \sum_{j=0}^{v-1} b_j \exp(-2\pi i \frac{jm}v )
+                \end{equation}
+                
+                Insert $b_j$ obtaining
+                \begin{equation}
+                \begin{split}
+                    \mathcal{F} (b)_m
+                    &= \sum_{j=0}^{v-1} \sum_{k=0}^{v-1} a_{j+k} x_k \exp(-2\pi i \frac{jm}v) \\
+                    &= \sum_{j=0}^{v-1} \sum_{k=0}^{v-1} x_k \exp(2\pi i \frac{km}v) a_{j+k} \exp(-2\pi i \frac{(j+k)m}v)  \\
+                    &= \sum_{k=0}^{v-1} x_k \exp(2\pi i \frac{km}v) \sum_{j'=k}^{v+k-1} a_{j'} \exp(-2\pi i \frac{j'm}v)
+                \end{split}
+                \end{equation}
+                
+                Looking at the inner sum we should note that not only we take indices $\mod v$ but the $j'$ in the exponent can be taken $\mod v$ as well. Let's use $j'' = j' \mod v$.
+                \begin{equation}
+                    \sum_{j'=k}^{v+k-1} a_{j'} \exp(-2\pi i \frac{j'm}v) = 
+                    \sum_{j''=0}^{v-1} a_{j''} \exp(-2\pi i \frac{j''m}v) = \mathcal{F}(a)_m
+                \end{equation}
+                
+                We can now finish the transformation:
+                \begin{equation}
+                \begin{split}
+                    \mathcal{F} (b)_m
+                    &= \sum_{k=0}^{v-1} x_k \exp(2\pi i \frac{km}v) \mathcal{F}(a)_m \\
+                    &= \mathcal{F}(a)_m (\sum_{k=0}^{v-1} x^*_k \exp(-2\pi i \frac{km}v))^* \\
+                    &= \mathcal{F}(a)_m \mathcal{F}^*(x^*)_m 
+                    = v \mathcal{F}(a)_m \mathcal{F}^{-1}(x)_m
+                \end{split}
+                \end{equation}
+                
+                The final form (exploiting the Fourier transform property $\mathcal{F}^{-1}(x) = \mathcal{F}^*(x^*)/v$) was included for completeness as it allows to explicitly express $x = \mathcal{F} \left(\frac1v \frac{\mathcal{F}(b)}{\mathcal{F}(a)} \right)$. However, we will use $\mathcal{F} (b)_m = \mathcal{F}(a)_m \mathcal{F}^*(x^*)_m$.
+            
+            \subsection{Solving the digression equation}
+                The $D$ and $d$ in equation $Dd=\bf v'$ is linked in the same way as $A$ and $a$ in subsection \ref{general:sec:anticirculant}. The image of $Dd=\bf v'$ is
+                
+                \begin{equation}
+                    \mathcal{F} ({\bf v'})_m = \mathcal{F}(d)_m \mathcal{F^*}(d^*)_m
+                \end{equation}
+
+                As we are only interested in real $d$, we can even simplify it to
+                
+                \begin{equation}
+                    \label{general:eq:dfourier}
+                    \mathcal{F} ({\bf v'})_m = \mathcal{F}(d)_m \mathcal{F^*}(d)_m = |\mathcal{F}(d)_m|^2
+                \end{equation}
+                
+                Putting the identity first we have ${\bf v'} = (v^2-v, -v, -v, \ldots)$ and $\mathcal{F}({\bf v'}) = (0,v^2,v^2,\ldots)$. Thus \eqref{general:eq:dfourier} becomes
+                \begin{equation}
+                    \left| \sum_{j=0}^{v-1} d_j \exp(-2\pi i \frac{jm}v) \right| = v (1-\delta_{m1})
+                \end{equation}
+
+                Note that for any $m | v$
+                \begin{equation}
+                    \label{general:eq:split_fourier}
+                    \left| \sum_{j=0}^{v-1} d_j e^{\frac{-2\pi i m j}v} \right|
+                    = \left| \sum_{j=0}^{v/m-1} \sum_{k=0}^{m-1}  d_{j+kv/m} e^{\frac{-2\pi i m j}v} \right|
+                    =v (1-\delta_{m1})
+                \end{equation}\
+                as 
+                \begin{equation}
+                    e^{\frac{-2\pi i m (j+kv/m)}v} = e^{\frac{-2\pi i m j}v} e^{-2\pi i k} = e^{\frac{-2\pi i m j}v}
+                \end{equation}
+                
+                \begin{theorem}
+                    \label{general:theorem:even_cyclic}
+                    In cyclic groups of even cardinality $\sum_{k=0}^{v/2-1} d_{2k} = \pm \frac v2$ and $\sum_{k=0}^{v/2-1} d_{2k+1} = \mp \frac v2$.
+                \end{theorem}
+                \begin{proof}
+                    Take \eqref{general:eq:split_fourier} for $m=v/2$
+                    \begin{equation}
+                        \left| \sum_{k=0}^{v/2-1} d_{2k} - \sum_{k=0}^{v/2-1} d_{2k+1} \right| = v
+                    \end{equation}
+                    
+                    We've split $d$ in half and got that total of one half is by $v$ larger than the total of the other half. The statement of the theorem follows as soon as we remember the grand total $\sum d_i = 0$.
+                \end{proof}
             
 	\section{Smallest difference multisets}
-        Bulk of oyr results concern difference multisets with small $v$. But let's start from zero.
+        Bulk of our results concern difference multisets with small $v$. But let's start from zero.
 	
 		\subsection{Trivial cases}
 			We should get these out of the way first. While not interesting on their own, these cases may turn out useful when looking for patterns and drawing parallels with other research.
@@ -262,30 +391,19 @@
 		\subsection{The two-element group}
 			There is only one quasigroup with two elements which also happens to be a commutative group. Let's take it in the form $\mathbb Z_2$.
 		
-			This case was solved by Buratti \cite{buratti1999old}. We reproduce the solution using our approach and notation for it's similarity on the treatment for the following cases.
+			This case was solved by Buratti \cite{buratti1999old}. We will provide a solution for this case for completeness of low-parameter cases.
 			
 			\begin{theorem}
-				$(\mathbb Z_2,k)$-difference multiset exists iff $k$ is a perfect square. In that case $n_0 = \frac{k \pm \sqrt k}{2}$ and $n_1 = \frac{k \mp \sqrt k}{2}$.
+				$(\mathbb Z_2,k)$-difference multiset exists whenever $k$ is a perfect square. In that case $n_0 = \frac{k \pm \sqrt k}{2}$ and $n_1 = \frac{k \mp \sqrt k}{2}$.
 			\end{theorem}
 			\begin{proof}
-				Write \eqref{apparatus:eq:dsystem} for the non-identity element and \eqref{apparatus:eq:di}.
-				
-				\begin{equation}
-					\begin{cases}
-						d_0 + d_1 = 0 \\
-						2 d_0 d_1 = -2
-					\end{cases}
-				\end{equation}
-				
-				The system of can be explicitly solved for $d_0$ and $d_1$. The solution combined with $n_i = \frac{k + d_i \sqrt k}v$ takes the form as stated and yields integers for any square $k$.
+                Theorem \ref{general:theorem:even_cyclic} provides $d_0 = \pm 1$ and $d_1 = \mp -1$.
+                
+                Notice that these $d_i$ produce integer $n_i = \frac{k + d_i \sqrt k}2$ whenever $k$ is a square.
 			\end{proof}
 			
 			\begin{remark}
-               Note that we did not involve the \eqref{apparatus:eq:dsystem} for identity ($d_0^2+d_1^2=2$) in as in this case it's guaranteed to be true if the above are true. 
-			\end{remark}
-			
-			\begin{remark}
-               According to Theorem 2.3 in \cite{arasu2005cyclic} there can only be a difference multiset over abelian group with an even $v=|G|$ if the $k$ is square. So this part is not specific to case of $\mathbb{Z}_2$.
+                We did not bother to discuss the case of non-square $k$ as it is proven in \cite{arasu2005cyclic} (see theorem 2.3) that there can only be a difference multiset over abelian group with an even $v=|G|$ if the $k$ is square.
 			\end{remark}
 
 	\section{Difference multisets over the three element group}
@@ -471,81 +589,40 @@
 			
 			So, we can conclude that there can be at most one (up to automorphisms) $(\mathbb Z_3, k)$-sum multiset for a given value $k$. Specifically there is one if $3 \mid k$ or $k \equiv 1 \mod 3$ and the multiplicities of elements are $\set{\frac k 3, \frac k 3, \frac k 3}$ and $\set{\frac{k-1}{3}, \frac{k-1}{3}, \frac{k+2}{3}}$ respectively. And there are none if $k \equiv 2 \mod 3$ which eerily reminds of the situations with difference multisets.
 			
-			Recall remark \ref{dms:remark:quasigroups}. If we consider any other quasigroup of order 3, it turns out that in every case the difference multisets and sum multisets give raise to either system \eqref{v3:eq:constraints} or the system \eqref{v3:other:eq:system}. There are only 5 quasigroups of order 3 so this can be checked on a case by case basis. We have thus solved the problem for every quasigroup of size 3.
+			Recall remark \ref{dms:remark:abelian}. If we consider any other quasigroup of order 3, it turns out that in every case the difference multisets and sum multisets give raise to either system \eqref{v3:eq:constraints} or the system \eqref{v3:other:eq:system}. There are only 5 quasigroups of order 3 so this can be checked on a case by case basis. We have thus solved the problem for every quasigroup of size 3.
 	
-	\section{Difference multisets over $\mathbb Z_2 \times \mathbb Z_2$}
-		Let us now consider group $\mathbb Z_2 \times \mathbb Z_2$. In this case our apparatus gives raise to the following system of equations.
-		
-		\begin{equation}
-			\label{v4:eq:constraints}
-			\begin{cases}
-				\sum d_i^2 = 12 \\
-				\sum d_i = 0 \\
-				d_{00} d_{01} + d_{10} d_{11} = -2 \\
-				d_{00} d_{10} + d_{01} d_{11} = -2 \\
-				d_{00} d_{11} + d_{10} d_{01} = -2
-			\end{cases}
-		\end{equation}
-		
-		\begin{theorem}
-			\label{v4:theorem:z2z2}
-			$(\mathbb Z_2 \times \mathbb Z_2, k)$--difference multisets exist iff $\sqrt k \equiv 0 \mod 4$ or $\sqrt k \equiv \pm 1 \mod 4$. The multiplicities are:
-			\begin{itemize}
-				\item $\frac{k + 3 \sqrt k}{4}$ for one element and $\frac{k - \sqrt k}{4}$ for the other three if $\sqrt k \equiv 1 \mod 4$.
-				\item $\frac{k - 3 \sqrt k}{4}$ for one element and $\frac{k + \sqrt k}{4}$ for the other three if $\sqrt k \equiv -1 \mod 4$.
-				\item $\frac{k \pm 3 \sqrt k}{4}$ for one element and $\frac{k \mp \sqrt k}{4}$ for the other three if $4 \mid \sqrt k$.
-			\end{itemize}
-		\end{theorem}
-		
-		\begin{proof}
-			Solve \eqref{v4:eq:constraints} to find eight solutions each having one $d_i = \pm 3$ and the rest $d_{j \neq i} = \mp 1$.
-			
-			Notice that these numbers yield integer $n_i = \frac{k+d_i \sqrt k}4$ values in and only in the cases described in theorem. Exclude the permutations of $n_i$ as permutations of elements are all automorphisms for $\mathbb Z_2 \times \mathbb Z_2$.
-		\end{proof}
+    \section{Other decent cases}
+        \subsection{Difference multisets over $\mathbb Z_2 \times \mathbb Z_2$}
+            Let us now consider group $\mathbb Z_2 \times \mathbb Z_2$. In this case our apparatus gives raise to the following system of equations.
+            
+            \begin{equation}
+                \label{v4:eq:constraints}
+                \begin{cases}
+                    \sum d_i^2 = 12 \\
+                    \sum d_i = 0 \\
+                    d_{00} d_{01} + d_{10} d_{11} = -2 \\
+                    d_{00} d_{10} + d_{01} d_{11} = -2 \\
+                    d_{00} d_{11} + d_{10} d_{01} = -2
+                \end{cases}
+            \end{equation}
+            
+            \begin{theorem}
+                \label{v4:theorem:z2z2}
+                $(\mathbb Z_2 \times \mathbb Z_2, k)$--difference multisets exist iff $\sqrt k \equiv 0 \mod 4$ or $\sqrt k \equiv \pm 1 \mod 4$. The multiplicities are:
+                \begin{itemize}
+                    \item $\frac{k + 3 \sqrt k}{4}$ for one element and $\frac{k - \sqrt k}{4}$ for the other three if $\sqrt k \equiv 1 \mod 4$.
+                    \item $\frac{k - 3 \sqrt k}{4}$ for one element and $\frac{k + \sqrt k}{4}$ for the other three if $\sqrt k \equiv -1 \mod 4$.
+                    \item $\frac{k \pm 3 \sqrt k}{4}$ for one element and $\frac{k \mp \sqrt k}{4}$ for the other three if $4 \mid \sqrt k$.
+                \end{itemize}
+            \end{theorem}
+            
+            \begin{proof}
+                Solve \eqref{v4:eq:constraints} to find eight solutions each having one $d_i = \pm 3$ and the rest $d_{j \neq i} = \mp 1$.
+                
+                Notice that these numbers yield integer $n_i = \frac{k+d_i \sqrt k}4$ values in and only in the cases described in theorem.
+            \end{proof}
 	
-	\section{Other particular cases}
 		\subsection{Difference multisets over $\mathbb Z_4$}
-			Our apparatus used in group $\mathbb Z_4$ produces one too few equations to solve this exactly.
-			\begin{equation}
-				\label{other:z4:eq:constraints}
-				\begin{cases}
-					\sum d_i^2 = k + \lambda \\
-					\sum d_i = 0 \\
-					d_0 d_1 + d_1 d_2 + d_2 d_3 + d_3 d_0 = -4 \\
-					2 d_0 d_2 + 2 d_1 d_3 = -4
-				\end{cases}
-			\end{equation}
-			
-			\begin{theorem}
-				The digressions of multiplicities of elements in $(\mathbb Z_4, k)$-difference multisets are linked by:
-				\begin{equation}
-					\begin{split}
-						d_0 + d_2 &=\pm 2 \\
-						d_1 + d_3 &= \mp 2
-					\end{split}
-				\end{equation}
-			\end{theorem}
-			
-			\begin{proof}
-				Take few of the \eqref{other:z4:eq:constraints} equations.
-				
-				\begin{equation}
-					\begin{cases}
-						d_0^2 + d_1^2 + d_2^2 + d_3^2 = 12 \\
-						d_0 d_1 + d_1 d_2 + d_2 d_3 + d_3 d_0 = -4 \\
-						2 d_0 d_2 + 2 d_1 d_3 = -4
-					\end{cases}
-				\end{equation}
-				
-				Sum these equations to obtain one.
-				
-				\begin{equation}
-					d_0 (d_0+d_1+d_2+d_3) + d_2 (d_2 + d_1 + d_0 + d_3) + (d_1 + d_3)^2 = 4
-				\end{equation}
-				
-				Exploit $\sum d_i = 0$.	This is a quadratic equation with respect to $d_1+d_3$ that we can solve directly into the form given in theorem. And the form of $n_1+n_3$ is a obtained from the above result by exploiting $\sum d_i = 0$ again.
-			\end{proof}
-			
 			It is easy to check that all of the solutions stated in theorem \ref{v4:theorem:z2z2} also work here, so it's clear that a solution exists if and only if $\sqrt k \in \mathbb Z$ and $\sqrt k \not\equiv 2 \mod 4$ (i.e. whenever $\lambda$ is even).
 			
 			\begin{figure}
@@ -574,7 +651,7 @@
 				\begin{equation}
 					\begin{cases}
                         d_{000} + d_{001} + d_{010} + d_{011} + d_{100}  + d_{101}  + d_{110}  + d_{111} = 0 \\
-                        d_{001}^+ d_{010}^+ d_{010}^+ d_{011}^+ d_{100}^ + d_{101}^ + d_{110}^ + d_{111}^= 56 \\
+                        d_{001}^2 + d_{010}^2 + d_{010}^2 + d_{011}^2 + d_{100}^2 + d_{101}^2 + d_{110}^2 + d_{111}^2 = 56 \\
                         d_{000} d_{001} + d_{010} d_{011} + d_{100} d_{101} +  d_{110} d_{111} = -4 \\
                         d_{000} d_{010} + d_{001} d_{011} + d_{101} d_{110} +  d_{101} d_{111} = -4 \\
                         d_{000} d_{011} + d_{001} d_{010} + d_{100} d_{111} +  d_{101} d_{110} = -4 \\
