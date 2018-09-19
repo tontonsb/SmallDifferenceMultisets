@@ -133,11 +133,18 @@
 		\end{equation}
 		
 		\begin{equation}
-			\label{apparatus:eq:dsystem}
-			\forall q \in Q \colon \sum (d_i d_{q+i}-v\delta_{i,q+i}) = -v
+			\label{apparatus:eq:dsystem_general}
+			\forall q \in Q \colon \sum (d_i (d_{q+i}-\frac{\delta_{i,q+i}}{\sqrt k})-v\delta_{i,q+i}) = -v
 		\end{equation}
 		
-		This transformation is quite cute in the sense that the equations no longer depend on $k$. Thus it is a bit simpler to find a solution, but the cost is that we must afterwards test if the solution produces integer $n_i$'s.
+		This transformation is especially cute in the case of loops where the latter equation simplifies even futher and no longer depend on $k$:
+		
+		\begin{equation}
+			\label{apparatus:eq:dsystem}
+			\forall q \in Q \colon \sum d_i d_{q+i} = v (v \delta_{q0}-1)
+		\end{equation}
+		
+		Thus it is a bit simpler to find a solution, but the cost is that we must afterwards test if the solution produces integer $n_i$'s.
 		
 		\begin{remark}
             System \eqref{apparatus:eq:dsystem} can be rewritten in the informal matrix form as
