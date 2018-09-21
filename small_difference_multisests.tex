@@ -348,7 +348,7 @@
                 
                 Putting the identity first we have ${\bf v'} = (v^2-v, -v, -v, \ldots)$ and $\mathcal{F}({\bf v'}) = (0,v^2,v^2,\ldots)$. Thus \eqref{general:eq:dfourier} becomes
                 \begin{equation}
-                    \left| \sum_{j=0}^{v-1} d_j \exp(-2\pi i \frac{jm}v) \right| = v (1-\delta_{m1})
+                    \left| \sum_{j=0}^{v-1} d_j \exp(-2\pi i \frac{jm}v) \right| = v (1-\delta_{m0})
                 \end{equation}
 
                 Note that for any $m | v$
@@ -646,14 +646,14 @@
 			\end{theorem}
 			
 			\begin{proof}
-				Write down \eqref{apparatus:eq:ni} and \eqref{apparatus:eq:system} for this case:
+				Write down \eqref{apparatus:eq:di} and \eqref{apparatus:eq:dsystem} for this case:
 				
 				\begin{equation}
 					\begin{cases}
                         d_{000} + d_{001} + d_{010} + d_{011} + d_{100}  + d_{101}  + d_{110}  + d_{111} = 0 \\
                         d_{001}^2 + d_{010}^2 + d_{010}^2 + d_{011}^2 + d_{100}^2 + d_{101}^2 + d_{110}^2 + d_{111}^2 = 56 \\
                         d_{000} d_{001} + d_{010} d_{011} + d_{100} d_{101} +  d_{110} d_{111} = -4 \\
-                        d_{000} d_{010} + d_{001} d_{011} + d_{101} d_{110} +  d_{101} d_{111} = -4 \\
+                        d_{000} d_{010} + d_{001} d_{011} + d_{100} d_{110} +  d_{101} d_{111} = -4 \\
                         d_{000} d_{011} + d_{001} d_{010} + d_{100} d_{111} +  d_{101} d_{110} = -4 \\
                         d_{000} d_{100} + d_{001} d_{101} + d_{010} d_{110} +  d_{011} d_{111} = -4 \\
                         d_{000} d_{101} +  d_{001} d_{100} + d_{010} d_{111} + d_{011} d_{110} = -4 \\
