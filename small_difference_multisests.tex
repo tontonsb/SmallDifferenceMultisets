@@ -356,7 +356,7 @@
                     \label{general:eq:split_fourier}
                     \left| \sum_{j=0}^{v-1} d_j e^{\frac{-2\pi i m j}v} \right|
                     = \left| \sum_{j=0}^{v/m-1} \sum_{k=0}^{m-1}  d_{j+kv/m} e^{\frac{-2\pi i m j}v} \right|
-                    =v (1-\delta_{m1})
+                    =v (1-\delta_{m0})
                 \end{equation}\
                 as 
                 \begin{equation}
@@ -641,7 +641,7 @@
 				\begin{itemize}
 					\item If $\sqrt k \equiv -1 \mod 8$ take $d_i=-7$ for any $i$ and $d_j=1$ for other $j\neq i$.
 					\item If $\sqrt k \equiv 1 \mod 8$ take $d_i=7$ for any $i$ and $d_j=-1$ for other $j\neq i$.
-					\item If $\sqrt k \equiv = 0 \mod 8$ choose $i, j$ such that $i \neq j$ and $i+001 \neq j$ and set $d_i=\pm 5$ and $d_{i+001}=d_j=d_{j+001}=\mp 3$ and set the other four $d_k = \pm 1$. Besides, both of the above solutions will work as well.
+					\item If $\sqrt k \equiv 0 \mod 8$ choose any element $i$ and three distinct elements $j_1,j_2,j_3$ such that $j_1+j_2+j_3=0$. Set $d_i=\pm 5$ and $d_{i+j_1}=d_{i+j_2}=d_{i+j_3}=\mp 3$ and let the other four $d_k = \pm 1$. Besides, both of the above solutions will work as well.
 				\end{itemize}
 			\end{theorem}
 			
