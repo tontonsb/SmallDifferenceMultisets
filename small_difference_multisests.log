@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2018.9.15)  3 OCT 2018 20:19
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2018.9.15)  18 OCT 2018 15:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1569,10 +1569,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 680.
 Here is how much of TeX's memory you used:
  20222 strings out of 492962
  334615 string characters out of 6136967
- 393793 words of memory out of 5000000
+ 392793 words of memory out of 5000000
  24106 multiletter control sequences out of 15000+600000
  544360 words of font info for 80 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 42i,19n,48p,713b,443s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,19n,48p,712b,443s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on small_difference_multisests.pdf (17 pages).
