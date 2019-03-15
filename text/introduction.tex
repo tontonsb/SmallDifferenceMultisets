@@ -1,0 +1,20 @@
+\subsection{Difference multisets}
+
+    Difference multiset is a combinatorial design similar to difference set. But a multiset. 
+
+    The classical difference set $D \subseteq G$ is such a set that produces every non-zero $g \in G$ the same number of times when taking the differences between elements of $D$. A simple example is $\set{0,1} \subset \mathbb Z_3$ as $1-0=1$ and $0-1=2$ thus producing both of the non-zero elements of $\mathbb Z_3$. Curiosly, the same pair is also a difference set in $\mathbb Z_2$, but that's boring as $G$ is always a difference set of $G$. A tiny bit less trivial and more classical example is $\set{0,1,3} \subset \mathbb Z_7$.
+
+    If we take a multiset instead, we can produce the whole $G$, including the identity. For example, considering the differences between elements of $\set{0,0,1} \subset \mathbb Z_3$ we obtain $\set{0,0,1,1,2,2}$. This is what we call a difference multiset. Take note that we take differences from a pair of elements not an element and itself (i.e. there was $0-0=0$ as first zero subtracted from the second and vice verse but not first zero from itself and no $1-1$).
+
+    These designs were first studied on their own by Buratti \cite{buratti1999old} who noticed the indirect use of these designs and the related strong difference families in constructions of various combinatorial designs. The paper defined the concept of difference multiset and obtained some theorems and constructions. The topic was developed further and renamed to regular difference covers by other authors \cite{arasu2005cyclic, arasu2005regular} who introduced new constructions and a notable amount of nonexistence theorems.
+
+    The results in the foundational articles are mostly analogous to those of difference sets, almost all of the constructions are using some difference set construction. As a result the number of constructed difference multisets is proportional to that of difference sets which is unlikely to reflect the real situation as there are infinitely more multisets over a given finite $G$ than there are subsets. Some constructions producing difference multisets of arbitrary size over fixed $G$ were uncovered in \cite{momihara2009strong} and we strive to expand in this direction---constructing arbitrarily large multisets in a fixed, mainly small algebra.
+
+\subsection{Synopsis}
+
+    We study the difference multisets using a system of mostly (and at most) quadratic equations on the multiplicities of their elements. We show that these multiplicities of any difference multiset over a loop are in a sense close to their average. This leads to the next idea of studying their digressions from the average which allows describing difference multisets with a simpler equation system.
+
+    Using these tools we find a construction that allows us to make infinite (but not very dense) amount of difference multisets over any quasigroup. Focusing on groups $\mathbb Z_2^n$ we got a hold of a more dense construction that not only produces infinitely many difference multisets, but also produce every multiset there is for $\mathbb Z_2^n$ for at least $n \leq 3$ (we don't really know about larger $n$ values but we suspect there are some more difference multisets there).
+
+    We also managed to solve the problem of difference multisets of quasigroups of cardinality 3. An interesting link is found---the possible sizes of difference multisets over $\mathbb Z_3$ are Löschian numbers.
+    
