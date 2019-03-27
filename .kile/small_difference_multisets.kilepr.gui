@@ -138,8 +138,8 @@ TextFolding=[]
 ViMarks=
 
 [view-settings,view=0,item:text/main.tex]
-CursorColumn=17
-CursorLine=22
+CursorColumn=57
+CursorLine=267
 JumpList=
 TextFolding=[]
-ViMarks=.,217,48,[,217,48,],217,48
+ViMarks=.,267,56,[,267,0,],267,56

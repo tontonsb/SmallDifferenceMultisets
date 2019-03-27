@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{arasu2005regular}
 KT~Arasu, Ashwani~K Bhandari, Siu-Lun Ma, and Surinder Sehgal.
@@ -36,6 +36,12 @@ Koji Momihara.
 Umesh~P Nair.
 \newblock Elementary results on the binary quadratic form a\^{} 2+ ab+ b\^{} 2.
 \newblock {\em arXiv preprint math/0408107}, 2004.
+
+\bibitem{A077925}
+Neil James~Alexander Sloane.
+\newblock The {O}n-{L}ine {E}ncyclopedia of {I}nteger {S}equences.
+\newblock \href{https://oeis.org}.
+\newblock Sequence \href{https://oeis.org/A077925}{A077925}.
 
 \bibitem{oeisA003136}
 Neil James~Alexander Sloane.

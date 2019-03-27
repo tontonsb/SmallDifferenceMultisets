@@ -3,44 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: small_difference_multisests.aux
 The style file: plain.bst
 Database file #1: difference_multisets.bib
-You've used 9 entries,
+You've used 10 entries,
             2118 wiz_defined-function locations,
-            551 strings with 5304 characters,
-and the built_in function-call counts, 2391 in all, are:
-= -- 240
-> -- 85
+            554 strings with 5367 characters,
+and the built_in function-call counts, 2608 in all, are:
+= -- 261
+> -- 92
 < -- 0
-+ -- 36
-- -- 26
-* -- 143
-:= -- 419
-add.period$ -- 28
-call.type$ -- 9
-change.case$ -- 40
++ -- 40
+- -- 28
+* -- 148
+:= -- 457
+add.period$ -- 32
+call.type$ -- 10
+change.case$ -- 44
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 89
-empty$ -- 206
-format.name$ -- 26
-if$ -- 488
+cite$ -- 10
+duplicate$ -- 96
+empty$ -- 228
+format.name$ -- 28
+if$ -- 535
 int.to.chr$ -- 0
-int.to.str$ -- 9
+int.to.str$ -- 10
 missing$ -- 7
-newline$ -- 49
-num.names$ -- 18
-pop$ -- 41
+newline$ -- 55
+num.names$ -- 20
+pop$ -- 51
 preamble$ -- 1
-purify$ -- 31
+purify$ -- 34
 quote$ -- 0
-skip$ -- 62
+skip$ -- 66
 stack$ -- 0
-substring$ -- 149
-swap$ -- 9
+substring$ -- 155
+swap$ -- 10
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 36
+type$ -- 40
 warning$ -- 0
-while$ -- 27
-width$ -- 10
-write$ -- 98
+while$ -- 29
+width$ -- 12
+write$ -- 109
