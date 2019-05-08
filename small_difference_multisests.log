@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2018.9.15)  27 MAR 2019 03:57
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2018.9.15)  8 MAY 2019 14:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -385,8 +385,10 @@ Overfull \hbox (4.44pt too wide) in paragraph at lines 6--13
 [4]
 File: assets/boundingSurfaces.pdf Graphic file (type pdf)
 <use assets/boundingSurfaces.pdf>
- [5] [6] [7]
-Overfull \hbox (7.25706pt too wide) in paragraph at lines 168--169
+ [5] [6]
+Missing character: There is no ⅈ in font cmmi7!
+ [7]
+Overfull \hbox (7.25706pt too wide) in paragraph at lines 169--170
 []\TU/lmr/m/n/10 The final form (exploiting the Fourier transform property $\OM
 S/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) = \OMS/cm
 sy/m/n/10 F[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 )\OML/cmm/m/i
@@ -394,7 +396,7 @@ t/10 =v$\TU/lmr/m/n/10 )
  []
 
 
-Overfull \hbox (1.35179pt too wide) in paragraph at lines 184--185
+Overfull \hbox (1.35179pt too wide) in paragraph at lines 185--186
 []\TU/lmr/m/n/10 Remembering $\OT1/cmr/bx/n/10 v \OT1/cmr/m/n/10 = (\OML/cmm/m/
 it/10 v[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 v; \OMS/cmsy/m/n/10 ^^@\OML/cmm
 /m/it/10 v; \OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 v; []\OT1/cmr/m/n/10 )$ \TU/lm
@@ -405,19 +407,19 @@ m/it/10 ; v[]; v[]; []\OT1/cmr/m/n/10 )$
 [8]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 222.
+(hyperref)                removing `math shift' on input line 223.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 222.
+(hyperref)                removing `subscript' on input line 223.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 222.
+(hyperref)                removing `superscript' on input line 223.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 222.
+(hyperref)                removing `math shift' on input line 223.
 
 [9] [10] [11] [12] [13] [14] [15]) (./text/conclusions.tex) [16]
 (./small_difference_multisests.bbl)
@@ -429,16 +431,16 @@ Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 85.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 85.
 Package rerunfilecheck Info: File `small_difference_multisests.out' has not cha
 nged.
-(rerunfilecheck)             Checksum: 8771A642C8BBB8E88B0469F399D498DE.
+(rerunfilecheck)             Checksum: 0BEB0DAE6139F3A072FC4BE14BC0416E.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 85.
  ) 
 Here is how much of TeX's memory you used:
  10721 strings out of 492962
- 151651 string characters out of 6136967
- 239717 words of memory out of 5000000
+ 151662 string characters out of 6136967
+ 239780 words of memory out of 5000000
  14617 multiletter control sequences out of 15000+600000
  13832 words of font info for 64 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 42i,19n,48p,738b,474s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,19n,48p,746b,474s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on small_difference_multisests.pdf (17 pages).
