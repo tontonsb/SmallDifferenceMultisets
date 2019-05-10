@@ -2,7 +2,7 @@
 kile_livePreviewEnabled=true
 kile_livePreviewStatusUserSpecified=false
 kile_livePreviewTool=LivePreview-PDFLaTeX
-lastDocument=text/conclusions.tex
+lastDocument=text/introduction.tex
 
 [document-settings,item:difference_multisets.bib]
 Bookmarks=
@@ -75,7 +75,7 @@ open=false
 order=-1
 
 [item:difference_multisets.bib]
-open=true
+open=false
 order=5
 
 [item:small_difference_multisests.tex]
@@ -103,11 +103,11 @@ open=true
 order=2
 
 [view-settings,view=0,item:difference_multisets.bib]
-CursorColumn=65
-CursorLine=87
+CursorColumn=70
+CursorLine=80
 JumpList=
 TextFolding=[]
-ViMarks=.,95,1,[,85,0,],-1,-1
+ViMarks=.,79,0,[,79,0,],79,0
 
 [view-settings,view=0,item:small_difference_multisests.tex]
 CursorColumn=454
@@ -117,8 +117,8 @@ TextFolding=[]
 ViMarks=.,45,262,[,45,223,],45,262
 
 [view-settings,view=0,item:text/conclusions.tex]
-CursorColumn=40
-CursorLine=4
+CursorColumn=0
+CursorLine=22
 JumpList=
 TextFolding=[]
 ViMarks=.,0,52,[,0,49,],0,52
@@ -131,15 +131,15 @@ TextFolding=[]
 ViMarks=.,73,59,[,73,54,],73,59
 
 [view-settings,view=0,item:text/introduction.tex]
-CursorColumn=418
+CursorColumn=439
 CursorLine=16
 JumpList=
 TextFolding=[]
 ViMarks=.,16,418,[,16,418,],16,418
 
 [view-settings,view=0,item:text/main.tex]
-CursorColumn=0
-CursorLine=512
+CursorColumn=489
+CursorLine=508
 JumpList=
 TextFolding=[]
-ViMarks=.,506,213,[,506,211,],506,213
+ViMarks=.,508,486,[,508,474,],508,486
