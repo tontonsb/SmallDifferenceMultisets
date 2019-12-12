@@ -1,1 +1,1 @@
-Kompilējam ar XeLaTeX un BibTeX.
+Kompilējam ar PdfLaTeX un BibTeX.
