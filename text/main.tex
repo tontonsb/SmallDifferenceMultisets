@@ -1,6 +1,6 @@
 \subsection{Limits for multiplicities}
-    Considering difference multisets over an arbitrary loop (quasigroup with an identity) one can notice that some of the surfaces defined by our equations are always the same. There is always the hyperplane $\sum {n_\mu} = k$ and the hypersphere $\sum n_\mu^2 = k + \lambda$ centered at the origin (see Figure \ref{general:figure:surfaces}). 
-%One could notice right away that 
+    Considering difference multisets over an arbitrary abelian group one can notice that some of the surfaces defined by our equations are always the same. There is always the hyperplane $\sum {n_\mu} = k$ and the hypersphere $\sum n_\mu^2 = k + \lambda$ centered at the origin (see Figure \ref{general:figure:surfaces}). 
+
 The second equation confines every multiplicity: $n_\mu \leq \sqrt{k+\lambda}$. By investigating the intersection more thoroughly we discover that the multiplicities are actually bound to be near to their average $k/v$.
 
     \begin{figure}
@@ -18,9 +18,9 @@ The second equation confines every multiplicity: $n_\mu \leq \sqrt{k+\lambda}$. 
         
     \begin{theorem}
         \label{general:theorem:limits}
-        If $M$ is a $(Q,k)$-difference multiset and $|Q|=v$ then
+        If $M$ is a $(G,k)$-difference multiset and $|G|=v$ then
         \begin{equation}
-            \forall \gamma \in Q \colon\qquad \frac{k-(v-1)\sqrt k}{v} \leq n(\gamma,M) \leq \frac{k+(v-1)\sqrt k}{v}
+            \forall \gamma \in G \colon\qquad \frac{k-(v-1)\sqrt k}{v} \leq n(\gamma,M) \leq \frac{k+(v-1)\sqrt k}{v}
         \end{equation}
     \end{theorem}
     
@@ -44,19 +44,16 @@ The second equation confines every multiplicity: $n_\mu \leq \sqrt{k+\lambda}$. 
         \end{equation}
         
         We apply the method of Lagrange multipliers to obtain the maximum and minimum of $n_\gamma$. 
-%honoring the constraints 
 We use the following Lagrange function ($\lambda_1$ and $\lambda_2$ here is the standard Lagrange multiplier notation and have nothing in common with the parameter $\lambda$).
         
         \begin{equation}
             \mathcal L = n_\gamma - \lambda_1 (k - \sum n_\mu) - \lambda_2 (k + \lambda - \sum n_\mu^2)
         \end{equation}
         
-%        This gives the stated boundaries for any $n_\gamma$ in a difference multiset. The optimization calculations are not included as those are tedious and in no way novel.
         By a standard application of this method the bounds of the theorem statement are obtained. We omit the routine calculations.
     \end{proof}
 
-    Theorem \ref{general:theorem:limits} 
-%might appear uninspiring at first but it not only 
+    Theorem \ref{general:theorem:limits}
 suggests using digressions instead of multiplicities (thus simplifying the equations) and greatly reduces the amount of options for every $n_\gamma$. This simplification allows decent computer searches which enabled us to discover some of the patterns that led to results presented in this paper.
         
     \begin{figure}
@@ -65,12 +62,11 @@ suggests using digressions instead of multiplicities (thus simplifying the equat
         \label{general:figure:limits}
     \end{figure}
     
-\subsection{A family of difference multisets for every quasigroup}
-%    Based on particular results discussed further, we have discovered a construction that works whenever $k$ is close to a multiple of $v$.
+\subsection{A family of difference multisets for every abelian group}
     
     \begin{theorem}
         \label{regular:theorem:regular}
-        If $\sqrt k$ is integer and congruent to $0$ or $\pm 1 \mod v$ then a $(Q,k)$-difference multiset exists with the following digressions.
+        If $\sqrt k$ is integer and congruent to $0$ or $\pm 1 \mod v$ then a $(G,k)$-difference multiset exists with the following digressions.
             \begin{itemize}
                 \item If $\sqrt k \equiv 1 \mod v$ then $d_\mu = v-1$ for any single element $\mu$ and $d_{\nu \neq \mu} = -1$ for the other elements.
                 \item If $\sqrt k \equiv -1 \mod v$ then $d_\mu =1-v$ for any single element $\mu$ and $d_{\nu \neq \mu} = 1$ for the other elements.
@@ -81,15 +77,15 @@ suggests using digressions instead of multiplicities (thus simplifying the equat
     \begin{proof}
         The conditions on the values of $k$ and $d_\mu$ guarantee that the multiplicities $n_\mu=\frac{k+d_\mu \sqrt k}v$ are integers. It is left to demonstrate that they form a difference multiset.
         
-        Considering equation \eqref{apparatus:eq:dsystem} for non-identity elements we can notice that the digression $\pm(v-1)$ (as any other digression) is involved in two of the products---once as $d_\mu$ and once as $d_{\gamma\mu}$.
-% (but not both at the same time as we consider non-identity $\gamma$ now). 
-Other $v-2$ products are $1\cdot 1$ or $(-1)\cdot(-1)$, thus the condition is satisfied:
+        Considering equation \eqref{apparatus:eq:dsystem} for non-identity elements we can notice that the digression $\pm(v-1)$ (as any other digression) is involved in two of the products---once as $d_\mu$ and once as $d_{\gamma+\mu}$.
+
+Other $v-2$ products are $(\pm1)\cdot(\pm1)$, thus the condition is satisfied:
         
         \begin{equation}
-            \sum d_\mu d_{\gamma\mu} = -2(v-1) + (v-2) = -v.
+            \sum d_\mu d_{\gamma+\mu} = 2(\pm(v-1)\cdot(\mp 1)) + (v-2)(\mp1)^2 = -v.
         \end{equation}
 
-        In the case of a loop, the condition for the identity $\gamma$ is also satisfied:
+        The condition for the identity $\gamma=0$ is also satisfied:
         
         \begin{equation}
             \sum d_\mu^2  = \left( \pm (v-1) \right)^2 + (v-1) \left( \mp 1 \right)^2 = v^2 - v.
@@ -99,14 +95,15 @@ Other $v-2$ products are $1\cdot 1$ or $(-1)\cdot(-1)$, thus the condition is sa
     \end{proof}
 
 \subsection{Difference multisets for cyclic groups}
-    For cyclic groups we can write \eqref{apparatus:eq:dsystem} as
+    Let us consider \eqref{apparatus:eq:dsystem} in matrix form 
     \begin{equation}
     \label{general:eq:matrix_eq}
         D d = \bf v
     \end{equation}\
-    where $d = (d_0, d_1, \ldots, d_{v-1})$, $D_{\mu\nu} = d_{\mu+\nu}$ and $\bf v = (v^2-v, -v, -v, \ldots)$.
+    where $d = (d_0, d_1, \ldots, d_{v-1})^T$, $\bf{v} = (v^2-v, -v, -v, \ldots)^T$ and $D_{\mu\nu} = d_{\mu+\nu}$, i.e.\ it is the Cayley table of the group in question.
     
-    The form of the matrix $D$ is the following:
+    For cyclic groups the matrix $D$ takes the form of an \emph{anticirculant} or \emph{left circulant} matrix:
+    
     \begin{equation}
         \label{general:eq:anticirculant_matrix}
         D =
@@ -117,118 +114,70 @@ Other $v-2$ products are $1\cdot 1$ or $(-1)\cdot(-1)$, thus the condition is sa
             \vdots & \vdots & \vdots & \ddots & \vdots \\
             d_{v-2} & d_{v-1} & d_0 & \cdots & d_{v-3} \\
             d_{v-1} & d_0 & d_1 & \cdots & d_{v-2} \\
-        \end{pmatrix}
+        \end{pmatrix}.
     \end{equation}
     
-    This is a special case of Hankel matrix sometimes called \emph{anticirculant matrix}. The structure of the corresponding $D$ will be the same.
+    We will use the discrete Fourier transform:
+    \begin{equation}
+        \mathcal F (y)_m = \sum_{j=0}^{v-1} y_j \omega^{-jm}
+    \end{equation}\
+    where $\omega = \exp(\frac{2\pi \imath}v)$. Considering an anticirculant matrix $A$ and applying the discrete Fourier transform we can show that the image of $Ax=b$ is
     
-    \subsubsection{Solving equations with anticirculant matrices}
-    \label{general:sec:anticirculant}
-%        We weren't able to track down a source dealing with matrices like \eqref{general:eq:anticirculant_matrix}, however we managed to apply the same methods as with circulant matrices \cite{wiki:circulant_matrix}.
-          To solve \eqref{general:eq:matrix_eq} we apply similar methods to those used to solve systems of linear equations with circulant matrices, see e.~g.\ \cite{wiki:circulant_matrix}.
-        
-        Let us consider the equation $Ax=b$ with an anticirculant $v \times v$ matrix
-        \begin{equation}
-            A =
-            \begin{pmatrix}
-                a_0 & a_1 & a_2 & \cdots & a_{v-1} \\ 
-                a_1 & a_2 & a_3 & \cdots & a_0 \\
-                a_2 & a_3 & a_4 & \cdots & a_1 \\
-                \vdots & \vdots & \vdots & \ddots & \vdots \\
-            \end{pmatrix}
-        \end{equation}\
-        and a vector $b=(b_0, b_1, \ldots, b_{v-1})^T$. 
-        
-        Denote $a=(a_0,a_1,\ldots,a_{v-1})$. We can now express the equation row by row (please consider indices $\mod v$):
-        \begin{equation}
-            b_j = \sum_{i=0}^{v-1} a_{j+i} x_i
-        \end{equation}
-        
-        Apply discrete Fourier transform:
-        \begin{equation}
-            \mathcal{F} (b)_m = \sum_{j=0}^{v-1} b_j \omega^{-jm}
-        \end{equation}\
-        where $\omega = \exp(\frac{2\pi i}v)$---a root of unity (this is the only place where $i$ is used to denote the imaginary unit).
-        
-        Insert $b_j$ obtaining
-        \begin{equation}
-        \begin{split}
-            \mathcal{F} (b)_m
-            &= \sum_{j=0}^{v-1} \sum_{i=0}^{v-1} a_{j+i} x_k \omega^{-jm} \\
-            &= \sum_{j=0}^{v-1} \sum_{i=0}^{v-1} x_i \omega^{im} a_{j+i} \omega^{-(j+i)m}  \\
-            &= \sum_{i=0}^{v-1} x_i \omega^{im} \sum_{j'=i}^{v+i-1} a_{j'} \omega^{-j'm}
-        \end{split}
-        \end{equation}
-        
-        Looking at the inner sum we should note that not only we take indices $\mod v$ but the $j'$ in the exponent can be taken $\mod v$ as well. Let's use $j'' = j' \mod v$.
-        \begin{equation}
-            \sum_{j'=i}^{v+i-1} a_{j'} \omega^{-j'm} = 
-            \sum_{j''=0}^{v-1} a_{j''} \omega^{-j''m}= \mathcal{F}(a)_m
-        \end{equation}
-        
-        We can now finish the transformation:
-        \begin{equation}
-        \begin{split}
-            \mathcal{F} (b)_m
-            &= \sum_{i=0}^{v-1} x_i \omega^{im} \mathcal{F}(a)_m \\
-            &= \mathcal{F}(a)_m (\sum_{i=0}^{v-1} x^*_i \omega^{-im})^* \\
-            &= \mathcal{F}(a)_m \mathcal{F}^*(x^*)_m 
-            = v \mathcal{F}(a)_m \mathcal{F}^{-1}(x)_m
-        \end{split}
-        \end{equation}
-        
-        The final form (exploiting the Fourier transform property $\mathcal{F}^{-1}(x) = \mathcal{F}^*(x^*)/v$) was included for completeness as it allows to explicitly express $x = \mathcal{F} \left(\frac1v \frac{\mathcal{F}(b)}{\mathcal{F}(a)} \right)$. However, we will use $\mathcal{F} (b)_m = \mathcal{F}(a)_m \mathcal{F}^*(x^*)_m$.
+    \begin{equation}
+        \label{general:eq:fourier_image}
+        \mathcal F (a)_m \mathcal F ^*(x^*)_m = \mathcal F (b)_m,
+    \end{equation}
+    where $a$ is the first row of $A$.
     
-    \subsubsection{Solving the digression equation}
-        The $D$ and $d$ in equation $Dd=\bf v$ is linked in the same way as $A$ and $a$ in section \ref{general:sec:anticirculant}. The image of $Dd=\bf v$ is
-        
-        \begin{equation}
-            \mathcal{F} ({\bf v})_m = \mathcal{F}(d)_m \mathcal{F^*}(d^*)_m
-        \end{equation}
+    This is particulary useful for equation \eqref{general:eq:matrix_eq} as the vector $d$ is also the first row of matrix $D$. The image of $Dd=\bf v$ is
+    
+    \begin{equation}
+        \mathcal{F} ({\bf v})_m = \mathcal{F}(d)_m \mathcal{F^*}(d^*)_m.
+    \end{equation}
 
-        As we are only interested in real $d$, we can even simplify it to
-        
-        \begin{equation}
-            \label{general:eq:dfourier}
-            \mathcal{F} ({\bf v})_m = \mathcal{F}(d)_m \mathcal{F^*}(d)_m = |\mathcal{F}(d)_m|^2
-        \end{equation}
-        
-        Remembering ${\bf v} = (v^2-v, -v, -v, \ldots)$ we can find that $\mathcal{F}({\bf v'}) = (0,v^2,v^2,\ldots)$ and \eqref{general:eq:dfourier} becomes
-        \begin{equation}
-            \label{gen:eq:dfourierfinal}
-            \left| \sum_{\mu=0}^{v-1} d_\mu \omega^{-\mu m} \right| = v (1-\delta_{m0})
-        \end{equation}
+    As we are only interested in real $d$, we can simplify it further:
+    
+    \begin{equation}
+        \label{general:eq:dfourier}
+        \mathcal{F} ({\bf v})_m = \mathcal{F}(d)_m \mathcal{F^*}(d)_m = |\mathcal{F}(d)_m|^2.
+    \end{equation}
+    
+    Remembering ${\bf v} = (v^2-v, -v, -v, \ldots)$ we can find that $\mathcal{F}({\bf v'}) = (0,v^2,v^2,\ldots)$ and \eqref{general:eq:dfourier} becomes
+    \begin{equation}
+        \label{gen:eq:dfourierfinal}
+        \left| \sum_{\mu=0}^{v-1} d_\mu \omega^{-\mu m} \right| = v (1-\delta_{m0})
+    \end{equation}
 
-        For any $m | v$ we can note that $\delta_{m0}=0$ and
+    For any $m | v$ we can note that $\delta_{m0}=0$ and
+    \begin{equation}
+        \label{general:eq:split_fourier}
+        \left| \sum_{\mu=0}^{v-1} d_\mu \omega^{-m\mu} \right|
+        = \left| \sum_{\mu=0}^{v/m-1} \sum_{\nu=0}^{m-1}  d_{\mu+\nu v/m} \omega^{-m\mu} \right|
+        =v
+    \end{equation}\
+    as 
+    \begin{equation}
+        e^{\frac{-2\pi i m (\mu+\nu v/m)}v} = e^{\frac{-2\pi i m \mu}v} e^{-2\pi i \nu} = e^{\frac{-2\pi i m \mu}v}
+    \end{equation}
+    
+    We consider expressions \eqref{gen:eq:dfourierfinal} and \eqref{general:eq:split_fourier} as the main results of this section, here's how one can use it.
+    
+    \begin{proposition}
+        \label{general:theorem:even_cyclic}
+        In cyclic groups of even cardinality $\sum_{\mu=0}^{v/2-1} d_{2\mu} = \pm \frac v2$ and $\sum_{\mu=0}^{v/2-1} d_{2\mu+1} = \mp \frac v2$.
+    \end{proposition}
+    \begin{proof}
+        Take \eqref{general:eq:split_fourier} for $m=v/2$
         \begin{equation}
-            \label{general:eq:split_fourier}
-            \left| \sum_{\mu=0}^{v-1} d_\mu \omega^{-m\mu} \right|
-            = \left| \sum_{\mu=0}^{v/m-1} \sum_{\nu=0}^{m-1}  d_{\mu+\nu v/m} \omega^{-m\mu} \right|
-            =v
-        \end{equation}\
-        as 
-        \begin{equation}
-            e^{\frac{-2\pi i m (\mu+\nu v/m)}v} = e^{\frac{-2\pi i m \mu}v} e^{-2\pi i \nu} = e^{\frac{-2\pi i m \mu}v}
+            \left| \sum_{\mu=0}^{v/2-1} d_{2\mu} - \sum_{\mu=0}^{v/2-1} d_{2\mu+1} \right| = v
         \end{equation}
         
-        We consider expressions \eqref{gen:eq:dfourierfinal} and \eqref{general:eq:split_fourier} as the main results of this section, here's how one can use it.
-        
-        \begin{proposition}
-            \label{general:theorem:even_cyclic}
-            In cyclic groups of even cardinality $\sum_{\mu=0}^{v/2-1} d_{2\mu} = \pm \frac v2$ and $\sum_{\mu=0}^{v/2-1} d_{2\mu+1} = \mp \frac v2$.
-        \end{proposition}
-        \begin{proof}
-            Take \eqref{general:eq:split_fourier} for $m=v/2$
-            \begin{equation}
-                \left| \sum_{\mu=0}^{v/2-1} d_{2\mu} - \sum_{\mu=0}^{v/2-1} d_{2\mu+1} \right| = v
-            \end{equation}
-            
-            We've split $d$ in half and got that total of one half is by $v$ larger than the total of the other half. The statement of the theorem follows as soon as we remember the grand total $\sum d_\mu = 0$.
-        \end{proof}
-        
-        \begin{remark}
-            Similar relation also holds true for some (many? all?) other structures that are not cyclic groups. For example in $\mathbb Z_2 \times \mathbb Z_2$ with elements $\set{\mu, \nu, \zeta, \eta}$ in any order we have $d_\mu+d_\nu-(d_\zeta+d_\eta)=\pm 4$.
-        \end{remark}
+        We've split $d$ in half and got that total of one half is by $v$ larger than the total of the other half. The statement of the theorem follows as soon as we remember the grand total $\sum d_\mu = 0$.
+    \end{proof}
+    
+    \begin{remark}
+        Similar relation also holds true for some (many? all?) other structures that are not cyclic groups. For example in $\mathbb Z_2 \times \mathbb Z_2$ with elements $\set{\mu, \nu, \zeta, \eta}$ in any order we have $d_\mu+d_\nu-(d_\zeta+d_\eta)=\pm 4$.
+    \end{remark}
 
 
 \subsection{Difference multisets over $\mathbb Z_2^i$}
@@ -332,7 +281,7 @@ Other $v-2$ products are $1\cdot 1$ or $(-1)\cdot(-1)$, thus the condition is sa
         \end{equation}\
         solutions for $d_\mu$ over $\mathbb Z_2^i$. The counting argument is that we can select $H_1$ in $2^{i+1}-2$ ways, $H_2$ in $2^i-2$ etc. until you stop and choose one of the remaining $2^j$ elements. And twice everything as you can flip the signs.
         
-        The difference multisets (i.e. integer solutions $n_\mu=\frac{k+d_\mu \sqrt k}v$) themselves are produced whenever $v | \sqrt k$. In addition the cases of single $d_\gamma = \pm (v-1)$ and the rest $d_\mu = \mp 1$ we get integer $n_\mu$ for $k \equiv \mp 1 \mod v$.
+        The difference multisets (i.e.\ integer solutions $n_\mu=\frac{k+d_\mu \sqrt k}v$) themselves are produced whenever $v | \sqrt k$. In addition the cases of single $d_\gamma = \pm (v-1)$ and the rest $d_\mu = \mp 1$ we get integer $n_\mu$ for $k \equiv \mp 1 \mod v$.
         
 \subsection{Difference multisets over the three element group}
     \label{sec:z3}
@@ -498,26 +447,3 @@ Other $v-2$ products are $1\cdot 1$ or $(-1)\cdot(-1)$, thus the condition is sa
         where $p_i$ are primes such that $p_i \equiv 1 \mod 3$ and $q_i$ are primes such that $q_i \equiv 2 \mod 3$. If any of the $\beta_i$ are odd, there are no integer solutions to $k=a^2+ab+b^2$. But if all of $\beta_i$ are even, the number of solutions is $6\prod (\alpha_i +1)$.
         
         It is hypothesised \cite{nair2004elementary} that the number of solutions (if every $\beta_i$ is even) having $a \geq b \geq 0$ is $1/2 + \prod (\alpha_i +1)/2$ if all the $\alpha_i$ are even and $\prod (\alpha_i +1)/2$ otherwise. We checked this to be true for a thousand Löschian numbers. However, for most of the Löschian numbers this remains unchecked.
-
-\subsection{Other quasigroups of size 3}
-    \label{sec:v3}
-    As mentioned in the opening sections, one might also consider $(\mathbb Z_3,k)$-sum multisets where the elements of $\mathbb Z_3$ must be produced as the sums of elements. This turns out to be a simple case.
-
-    Similarly to \eqref{apparatus:eq:system} we start by writing down the ways to obtain each of the elements and requiring them to be equal ($\forall \gamma \in \mathbb Z_3 \lambda = \sum (n_\mu (n_{\mu-\gamma}-\delta_{\mu,\mu+\gamma}))$). Adding the $\sum n_\mu = k$ and using $3\lambda = k(k-1)$ we may form a system of equations.
-    
-    \begin{equation}
-        \label{v3:other:eq:system}
-        \begin{cases}
-            n_0 (n_0-1) + 2 n_1 n_2 = \frac{k(k-1)}{3} \\
-            n_1 (n_1-1) + 2 n_2 n_0 = \frac{k(k-1)}{3} \\
-            n_2 (n_2-1) + 2 n_0 n_1 = \frac{k(k-1)}{3} \\
-            n_0 + n_1 + n_2 = k
-        \end{cases}
-    \end{equation}
-
-    It can be noticed with ease that \eqref{v3:other:eq:system} possesses symmetry with respect to all the elements of $\mathbb Z_3$. Besides this system can easily be solved explicitly -- valid multisets of $n_\mu$ are $\set{\frac k 3, \frac k 3, \frac k 3}$ and $\set{\frac{k-1}{3}, \frac{k-1}{3}, \frac{k+2}{3}}$.
-    
-    So, we can conclude that there can be at most one (up to automorphisms) $(\mathbb Z_3, k)$-sum multiset for a given value $k$. Specifically there is one if $3 \mid k$ or $k \equiv 1 \mod 3$ and the multiplicities of elements are $\set{\frac k 3, \frac k 3, \frac k 3}$ and $\set{\frac{k-1}{3}, \frac{k-1}{3}, \frac{k+2}{3}}$ respectively. And there are none if $k \equiv 2 \mod 3$ which eerily reminds of the situations with difference multisets over $\mathbb Z_3$ and $\mathbb Z_2^i$.
-    
-    Recall remark \ref{dms:remark:abelian}. If we consider any other quasigroup of order 3, it turns out that in every case the difference multisets and sum multisets give raise to either system \eqref{v3:eq:constraints} or the system \eqref{v3:other:eq:system}. There are only 5 quasigroups of order 3 so this can be checked on a case by case basis. We have thus solved the problem for every quasigroup of size 3.
-    

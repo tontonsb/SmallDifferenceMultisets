@@ -1,0 +1,13 @@
+12 dec. 2019 05:09:48.481 INFO  - Welcome to arara 4.0 (revision 1)!
+12 dec. 2019 05:09:48.483 INFO  - -----------------------------------------------------------------
+12 dec. 2019 05:09:48.488 INFO  - ::: arara @ C:\texlive\2018\texmf-dist\scripts\arara
+12 dec. 2019 05:09:48.488 INFO  - ::: Java 12.0.1, Oracle Corporation
+12 dec. 2019 05:09:48.488 INFO  - ::: C:\Program Files\Java\jdk-12.0.1
+12 dec. 2019 05:09:48.488 INFO  - ::: Windows 10, amd64, 10.0
+12 dec. 2019 05:09:48.488 INFO  - ::: user.home @ C:\Users\juris
+12 dec. 2019 05:09:48.488 INFO  - ::: user.dir @ C:\Users\juris\Documents\GitHub\SmallDifferenceMultisets
+12 dec. 2019 05:09:48.488 INFO  - ::: CF @ [none]
+12 dec. 2019 05:09:48.488 INFO  - -----------------------------------------------------------------
+12 dec. 2019 05:09:48.489 INFO  - Processing 'small_difference_multisests.tex' (size: 2 KB, last modified: 12/12/2019 04:54:07), please wait.
+12 dec. 2019 05:09:48.500 ERROR - It looks like no directives were found in the provided file. Make sure to include at least one directive and try again.
+12 dec. 2019 05:09:48.502 INFO  - Total: 0.00 seconds
