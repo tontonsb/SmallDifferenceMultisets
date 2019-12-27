@@ -120,16 +120,16 @@ Other $v-2$ products are $(\pm1)\cdot(\pm1)$, thus the condition is satisfied:
     We will use the discrete Fourier transform:
     \begin{equation}
         \mathcal F (y)_m = \sum_{j=0}^{v-1} y_j \omega^{-jm}
-    \end{equation}\
-    where $\omega = \exp(\frac{2\pi \imath}v)$. Considering an anticirculant matrix $A$ and applying the discrete Fourier transform we can show that the image of $Ax=b$ is
+    \end{equation}
+    where $\omega = \exp(\frac{2\pi \imath}v)$. Let us consider an equation $Ax=b$ with anticirculant matrix $A$. Applying the discrete Fourier transform to $b$ we obtain
     
     \begin{equation}
         \label{general:eq:fourier_image}
-        \mathcal F (a)_m \mathcal F ^*(x^*)_m = \mathcal F (b)_m,
+        \mathcal F (b)_m = \mathcal F (a)_m \mathcal F ^*(x^*)_m,
     \end{equation}
     where $a$ is the first row of $A$.
     
-    This is particulary useful for equation \eqref{general:eq:matrix_eq} as the vector $d$ is also the first row of matrix $D$. The image of $Dd=\bf v$ is
+    This is particulary useful for equation \eqref{general:eq:matrix_eq} as the vector $d$ is also the first row of matrix $D$. The image of $\bf v=Dd$ is
     
     \begin{equation}
         \mathcal{F} ({\bf v})_m = \mathcal{F}(d)_m \mathcal{F^*}(d^*)_m.
@@ -142,22 +142,22 @@ Other $v-2$ products are $(\pm1)\cdot(\pm1)$, thus the condition is satisfied:
         \mathcal{F} ({\bf v})_m = \mathcal{F}(d)_m \mathcal{F^*}(d)_m = |\mathcal{F}(d)_m|^2.
     \end{equation}
     
-    Remembering ${\bf v} = (v^2-v, -v, -v, \ldots)$ we can find that $\mathcal{F}({\bf v'}) = (0,v^2,v^2,\ldots)$ and \eqref{general:eq:dfourier} becomes
+    Since ${\bf v} = (v^2-v, -v, -v, \ldots)^T$ we can find that $\mathcal{F}({\bf v}) = (0,v^2,v^2,\ldots)$ and \eqref{general:eq:dfourier} becomes
     \begin{equation}
         \label{gen:eq:dfourierfinal}
         \left| \sum_{\mu=0}^{v-1} d_\mu \omega^{-\mu m} \right| = v (1-\delta_{m0})
     \end{equation}
 
-    For any $m | v$ we can note that $\delta_{m0}=0$ and
+    For any $m | v$ we have $\delta_{m0}=0$ and
     \begin{equation}
         \label{general:eq:split_fourier}
         \left| \sum_{\mu=0}^{v-1} d_\mu \omega^{-m\mu} \right|
-        = \left| \sum_{\mu=0}^{v/m-1} \sum_{\nu=0}^{m-1}  d_{\mu+\nu v/m} \omega^{-m\mu} \right|
+        = \left| \sum_{\kappa=0}^{v/m-1} \omega^{-m\kappa} \cdot \sum_{\nu=0}^{m-1}  d_{\kappa+\nu v/m} \right|
         =v
     \end{equation}\
     as 
     \begin{equation}
-        e^{\frac{-2\pi i m (\mu+\nu v/m)}v} = e^{\frac{-2\pi i m \mu}v} e^{-2\pi i \nu} = e^{\frac{-2\pi i m \mu}v}
+        \exp\left(\frac{-2\pi \imath m (\kappa+\nu v/m)}v\right) = \exp\left(\frac{-2\pi \imath m \kappa}v\right) \exp\left(-2\pi \imath \nu\right) = \exp\left(\frac{-2\pi \imath m \kappa}v\right)
     \end{equation}
     
     We consider expressions \eqref{gen:eq:dfourierfinal} and \eqref{general:eq:split_fourier} as the main results of this section, here's how one can use it.
