@@ -285,16 +285,16 @@ Other $v-2$ products are $(\pm1)\cdot(\pm1)$, thus the condition is satisfied:
         
 \subsection{Difference multisets over the three element group}
     \label{sec:z3}
-    There is only one group of three elements. Let's take it in form of $\mathbb Z_3$. What must the $k$ be for $(\mathbb Z_3,k)$-difference multiset to exist? What are these difference multisets and how many of them are there for a particular value of $k$?
-
-    To answer these questions we shall write down \eqref{apparatus:eq:system} for a non-identity element and combine it with \eqref{apparatus:eq:ni} and \eqref{apparatus:eq:parameters} to form a system of equations.
+    There is only one group of three elements, $\mathbb Z_3$.
+% What must the $k$ be for $(\mathbb Z_3,k)$-difference multiset to exist? What are these difference multisets and how many of them are there for a particular value of $k$?
+For this group \eqref{apparatus:eq:parameters}, \eqref{apparatus:eq:ni} and \eqref{apparatus:eq:system} for a non-identity element form the following system of equations:
 
     \begin{equation}
         \label{v3:eq:constraints}
         \begin{cases}
             3\lambda = k(k-1) \\
             \sum n_\mu = k \\
-            \sum n_\mu n_{\mu+1} = \lambda
+            \sum n_\mu n_{\mu+1} = \lambda.
         \end{cases}
     \end{equation}
 
@@ -305,52 +305,55 @@ Other $v-2$ products are $(\pm1)\cdot(\pm1)$, thus the condition is satisfied:
         Multiplicities of different $(\mathbb Z_3,k)$-difference multiset elements $\mu$ un $\nu$ are related via
         \begin{equation}
             \label{v3:eq:relations}
-            n_{\mu\neq \nu} = \frac{k-n_\nu \pm \sqrt{\frac{4k-(k-3n_\nu)^2}{3}}}{2}
+            n_{\mu} = \frac{k-n_\nu \pm \sqrt{\frac{4k-(k-3n_\nu)^2}{3}}}{2}.
         \end{equation}
     \end{theorem}
 
     \begin{proof}
-        Take any element $\gamma \in \mathbb Z_3$ and assign $c = n_\gamma$. Let's use $\alpha$ and $\beta$ to name the remaining elements of $\mathbb Z_3$. The system \eqref{v3:eq:constraints} can now be rewritten:
+        Take any element $\nu \in \mathbb Z_3$ and assign $c = n_\nu$. Let us denote the two remaining elements of $\mathbb Z_3$ by $\alpha$ and $\beta$. The system \eqref{v3:eq:constraints} can now be rewritten:
         \begin{equation}
             \begin{cases}
                 n_\alpha + n_\beta = k - c \\
-                n_\alpha n_\beta + c (n_\alpha + n_\beta)  = \lambda 
+                n_\alpha n_\beta + c (n_\alpha + n_\beta)  = \lambda.
             \end{cases}
         \end{equation}
+
+That is equivalent to a quadratic equation with the solution for $n_{\mu}=n_{\alpha,\beta}$ presented in the statement of the theorem.
+
+%        Substitute $k'=k-c$ and $\lambda' = \lambda + c^2-kc$ to obtain
         
-        Substitute $k'=k-c$ and $\lambda' = \lambda + c^2-kc$ to obtain
+%        \begin{equation}
+%            \begin{cases}
+%                n_\alpha + n_\beta = k' \\
+%                n_\alpha n_\beta = \lambda'
+%            \end{cases}
+%        \end{equation}
         
-        \begin{equation}
-            \begin{cases}
-                n_\alpha + n_\beta = k' \\
-                n_\alpha n_\beta = \lambda'
-            \end{cases}
-        \end{equation}
+%        Eliminating $n_\beta$ we arrive at a quadratic equation that is solved into
         
-        Eliminating $n_\beta$ we arrive at a quadratic equation that is solved into
+%        \begin{equation}
+%            n_{\alpha,\beta} = \frac{k' \pm \sqrt{k'^2-4\lambda'}}{2}
+%        \end{equation}
         
-        \begin{equation}
-            n_\alpha = \frac{k' \pm \sqrt{k'^2-4\lambda'}}{2}
-        \end{equation}
-        
-        Undo the substitutions and you're done.
+%        Undo the substitutions and you're done.
     \end{proof}
 
-    Considering the multiplicities in form of $n_\mu = \frac{k+\Delta_\mu}{3}$, we can restate \eqref{v3:eq:relations} into the following.
+    It is useful to consider the multiplicities in the form $n_\mu = \frac{k+\Delta_\mu}{3}$, then \eqref{v3:eq:relations} can be rewritten as follows:
 
     \begin{equation}
         \label{v3:eq:relations_delta}
-        n_{\mu\neq \nu} = \frac{k-n_\nu \pm \sqrt{\frac{4k-\Delta_\nu^2}{3}}}{2}
+        n_{\mu} = \frac{k-n_\nu \pm \sqrt{\frac{4k-\Delta_\nu^2}{3}}}{2}.
     \end{equation}
 
-    The rest of analysis focuses on the $\Delta_\mu$ and it's effect on the above equation. The behaviour of expression under the root is tied to a topic in number theory called Löschian numbers \cite{oeisA003136}. These numbers make an appearance in a variety of fields (see comments in \cite{oeisA003136}).
+%    The rest of analysis focuses on the $\Delta_\mu$ and it's effect on the above equation. 
+The behaviour of expression under the root is tied to a topic in number theory called Löschian numbers \cite{oeisA003136}. These numbers make an appearance in a variety of fields (see comments in \cite{oeisA003136}).
 
     \begin{definition}
-        \label{v3:def:loeshian}
-        Number $k$ is called a Löschian number if $\exists a,b \in \mathbb Z \colon a^2+ab+b^2=k$.
+        \label{v3:def:loeschian}
+        Number $k$ is called a Löschian number iff $\exists a,b \in \mathbb Z \colon a^2+ab+b^2=k$.
     \end{definition}
 
-    For our purposes (to eliminate unnecessary symmetries) we will only consider $a,b$ such that $a \geq b \geq 0$. This, however, doesn't change the scope of Löschian numbers.
+    To eliminate unnecessary symmetries we will only consider $a,b$ such that $a \geq b \geq 0$. This doesn't change the scope of Löschian numbers:
 
     \begin{lemma}
         \label{v3:lemma:loeschian}
@@ -358,39 +361,40 @@ Other $v-2$ products are $(\pm1)\cdot(\pm1)$, thus the condition is satisfied:
     \end{lemma}
 
     \begin{proof}
-        As $k$ is a Löschian number there are $a',b' \colon a'^2+a'b'+b'^2=k$. We can construct $a,b$ such that $a^2+ab+b^2=k$ and $a \geq b \geq 0$ as follows:
+        Let $k$ be a Löschian number, then there are $a',b'\in\mathbb Z\colon a'^2+a'b'+b'^2=k$. We can obtain $a,b$ with $a \geq b \geq 0$
+% such that $a^2+ab+b^2=k$ and $a \geq b \geq 0$ 
+as follows:
         \begin{itemize}
-            \item If $a' \geq 0$ and $b' \geq 0$ just take $a=a'$ and $b=b'$ or swap them if $a'<b'$.
-            \item If $a'<0,b'<0$ take $a'=-a,b'=-b$ or swap them if $a'>b'$.
-            \item If $ab<0$ take either $a'=|a|, b'=|a+b|$ or $a'=|a+b|, b'=|b|$. Swap places as necessary to ensure $a \geq b \geq 0$.
+            \item If $a'b' \geq 0$, take $a=\max(|a'|,|b'|)$ and $b=\min(|a'|,|b'|)$.
+            \item If $a'b'<0$, take either $a=\max(|a'|,|a'+b'|)$, $b=\min(|a'|,|a'+b'|)$ or $a=\max(|b'|,|a'+b'|)$, $b=\min(|b'|,|a'+b'|)$.
         \end{itemize}
     \end{proof}
 
-    Having introduced the term, we may now introduce the promised link.
+%    Having introduced the term, we may now introduce the promised link.
 
     \begin{lemma}
         \label{v3:lemma:square}
-        There exists a $\Delta$ that makes $\frac{4k-\Delta^2}{3}$ a perfect square iff $k$ is Löschian number.
+        There exists $\Delta$ such that $\frac{4k-\Delta^2}{3}$ is a perfect square iff $k$ is a Löschian number.
         
-        $\Delta$ values that does the job are $\pm (2a+b), \pm (a+2b), \pm (a-b)$, where $a,b$ are such that $a \geq b \geq 0$ and $a^2+ab+b^2=k$. There is no other $\Delta$ that makes $\frac{4k-\Delta^2}{3}$ into square.
+        If $k=a^2+ab+b^2$, $a \geq b \geq 0$ is a Löschian number then $\frac{4k-\Delta^2}{3}$ is a square iff $\Delta$ has one of the values $\pm (2a+b), \pm (a+2b), \pm (a-b)$.
     \end{lemma}
 
     \begin{proof}
-        For a Löschian number $k=a^2+ab+b^2$ take $\Delta$ equal to $\pm (2a+b)$, $\pm (a+2b)$ or $\pm (a-b)$ and obtain the value of expression in question to be $b^2$, $a^2$ or $(a+b)^2$ which are clearly squares.
+        Substituting $k=a^2+ab+b^2$ and $\Delta=\pm (2a+b)$, $\pm (a+2b)$ or $\pm (a-b)$ in the expression $\frac{4k-\Delta^2}{3}$, we obtain, respectively, the squares $b^2$, $a^2$ or $(a+b)^2$.
         
-        On the other hand, if $\frac{4k-\Delta^2}{3}$ is square, assign:
+        On the other hand, if $\frac{4k-\Delta^2}{3}$ is a square, denote:
         \begin{equation}
-            z^2 = \frac{4k-\Delta^2}{3}
+            z^2 = \frac{4k-\Delta^2}{3}.
         \end{equation}
         
         Rewrite
         \begin{equation}
-            \frac{3z^2 + \Delta^2}{4} = k
+            \frac{3z^2 + \Delta^2}{4} = k.
         \end{equation}
         
-        Noticing that $4$ divides $3z^2 + \Delta^2$ we can conclude that $z$ and $\Delta$ are of the same parity (because $z^2 \equiv \Delta^2 \mod 4$). Thus $2$ divides both $\Delta-z$ and $\Delta+z$.
+        Since $4$ divides $3z^2 + \Delta^2$, $z$ and $\Delta$ are of the same parity. Thus $2$ divides both $\Delta-z$ and $\Delta+z$.
         
-        We can now find integers $a,b$ such that $a \geq b \geq 0$ and $a^2+ab+b^2=k$ (thus $k$ is a Löschian number) and the $\Delta$ can be expressed in one of the expressions stated in lemma.
+        By taking the following values of $a,b$, we obtain that $a^2+ab+b^2=k$, $a \geq b \geq 0$ (thus $k$ is a Löschian number) and $\Delta$ is one of the expressions stated in lemma:
         
         \begin{itemize}
             \item If $z \geq \Delta$ take $a=\frac{z+\Delta}{2}$ and $b=\frac{z-\Delta}{2}$. Then $a-b=\Delta$.
@@ -419,11 +423,11 @@ Other $v-2$ products are $(\pm1)\cdot(\pm1)$, thus the condition is satisfied:
     \end{theorem}
 
     \begin{proof}
-        According to lemma \ref{v3:lemma:square}, the expression \eqref{v3:eq:relations_delta} will equal integer only if $k$ is a Löschian number and $\Delta_\mu$ is one of the listed on \eqref{v3:eq:deltas} or a negative of that.
+        According to lemma \ref{v3:lemma:square}, the right hand side of \eqref{v3:eq:relations_delta} is integer only if $k$ is a Löschian number and $\Delta_\mu$ is one of the listed on \eqref{v3:eq:deltas} or a negative of that.
         
-        Insert the constructions listed in \eqref{v3:theorem:loeschian} into \eqref{v3:eq:relations} to check that these are indeed multiplicities that make up a difference multiset if the numbers are whole. One can also check that using $\Delta_\alpha$ to construct one of the multiplicities you will find $\Delta_\beta$ and $\Delta_\gamma$ used for the others and the same is true in any order.
+        Insert the constructions listed in the statement of theorem into \eqref{v3:eq:relations} to check that these are indeed multiplicities that make up a difference multiset if the numbers are integer. One can also check that using $\Delta_\alpha$ to construct one of the multiplicities you will find $\Delta_\beta$ and $\Delta_\gamma$ used for the others and the same is true in any order.
         
-        Considering remainders one may check the following:
+        Considering $a$ and $b$ modulo $3$ one may check the following:
         \begin{itemize}
             \item If $a \equiv b \mod 3$ then $3 \mid k$ and all the multiplicities in both the constructions $n_\mu=\frac{k+\Delta_\mu}{3}$ and $n_\mu=\frac{k-\Delta_\mu}{3}$ are integers.
             \item If $a \equiv b-1 \mod 3$ then $k \equiv 1 \mod 3$ and only the multiplicities constructed by $n_\mu=\frac{k+\Delta_\mu}{3}$ are all integer.
@@ -433,7 +437,7 @@ Other $v-2$ products are $(\pm1)\cdot(\pm1)$, thus the condition is satisfied:
 
     \begin{remark}
         Allowing $a,b$ such that $a \geq b \geq 0$ wouldn't hold, we'd obtain the same $\Delta_\alpha, \Delta_\beta, \Delta_\gamma$ in different order thus making the same difference multisets again (up to automorphism). This constraint is intended to exclude such symmetries.
-        Different $a \geq b \geq 0$ pairs with $a^2+ab+b^2=k$ will lead to different value of $a-b$ and thus all the constructions mentioned in \ref{v3:theorem:loeschian} will be distinct. Consequently the number of $(\mathbb Z_3,k)$ will be proportional to number of unique $a,b$ pairs (respecting constraints) and the coefficient of proportionality is $-(k+1) \mod 3$.
+        Different $a \geq b \geq 0$ pairs with $a^2+ab+b^2=k$ will lead to different values of $a-b$ and thus all the constructions mentioned in \ref{v3:theorem:loeschian} will be distinct. Consequently the number of $(\mathbb Z_3,k)$-difference multisets will be proportional to the number of unique $a,b$ pairs (respecting constraints) and the coefficient of proportionality is $-(k+1) \mod 3$.
     \end{remark}
 
     \subsection{Estimating numbers}
