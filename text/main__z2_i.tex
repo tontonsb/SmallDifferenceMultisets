@@ -1,28 +1,22 @@
-Consider $\mathbb Z_2^i$ as a linear space. Let us take an arbitrary basis with coordinates $(\mu_1, \mu_2, \ldots, \mu_i)$. We define a subset $H_r$ as follows:
+Consider $\mathbb Z_2^i$ as an affine space over $\mathbb Z_2$. For a chosen affine frame $F$, each element $\mu\in\mathbb Z_2^i$ can be represented by its affine coordinates: $\mu=(\mu_1, \mu_2, \ldots, \mu_i)$. For $r\in\{1,2,\ldots,i\}$ we define a subspace $H_r^F$ as follows:
 
 \begin{equation}
-    \mu \in H_r \iff 
+    \mu \in H_r^F \iff 
         \begin{cases}
             \mu_j = 1 & \text{for } j < r \\
             \mu_r = 0
         \end{cases}
 \end{equation}
-and denote $\xi_r = \sum\limits_{j=0}^r (-2)^j$, which is the sequence $-1,3,-5,11,-21,43,\ldots$ for positive $r$. It is also useful to note the following relation\cite{A077925}:
-
-\begin{equation}
-    \label{z2i:eq:xi}
-    \xi_r = \frac{1-(-2)^{r+1}}3.
-\end{equation}
+and denote $\xi_r = \sum\limits_{j=0}^r (-2)^j=(1-(-2)^{r+1})/3$.
 
 \begin{theorem}
     \label{z2i:theorem:construction}
-    The following construction produces a $(\mathbb Z_2^i, r)$-difference multiset if $r$ is square and $v | \sqrt r$:
+    For an arbitrary affine frame $F$ of $\mathbb Z_2^i$ and integer $m \colon 0 < m < i$, the following construction produces a $(\mathbb Z_2^i, k)$-difference multiset iff $k$ is square and $v | \sqrt k$:
     \begin{enumerate}
-        \item Select integer $m \colon 0 < m < i$.
-        \item Set $d_\mu = \xi_r$ for $\mu \in H_r$ where $r \leq m$.
-        \item Select element $\nu \in H_F$ where $H_F$ is the subset containg elements that do not have their digression set yet: $\mu \in H_F \iff \mu \notin \bigcup\limits_{r \leq m} H_r$.
+        \item For each $\mu \in H_r^F$ where $r \leq m$, set $d_\mu = \xi_r$.
+        \item Select element $\nu \in \tilde H$ where $\tilde H$ is the subset containg elements that do not have their digression set yet: $\mu \in \tilde H \iff \mu \notin \bigcup\limits_{r \leq m} H_r$.
         \item Set $d_\nu = (-1)^m v + \xi_{m+1}$.
-        \item Set $d_\mu = \xi_{m+1}$ for all $\mu \in H_F$ such that $\mu \neq \nu$.
+        \item Set $d_\mu = \xi_{m+1}$ for all $\mu \in \tilde H$ such that $\mu \neq \nu$.
     \end{enumerate}
 \end{theorem}
 
