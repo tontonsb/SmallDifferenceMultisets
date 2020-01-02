@@ -10,6 +10,12 @@ KT~Arasu and Surinder Sehgal.
 \newblock Cyclic difference covers.
 \newblock {\em Austral. J. Combin}, 32:213--223, 2005.
 
+\bibitem{berndt1992fitzroy}
+{Bruce C.} Berndt.
+\newblock On a certain theta-function in a letter of ramanujan from fitzroy
+  house.
+\newblock {\em Ganita}, 43(1-2):33--43, 1992.
+
 \bibitem{bose1939construction}
 Raj~Chandra Bose.
 \newblock On the construction of balanced incomplete block designs.
@@ -21,10 +27,10 @@ Marco Buratti.
   families.
 \newblock {\em Journal of Combinatorial Designs}, 7(6):406--425, 1999.
 
-\bibitem{haanpaa2004minimum}
-Harri Haanp{\"a}{\"a}.
-\newblock Minimum sum and difference covers of abelian groups.
-\newblock {\em Journal of Integer Sequences}, 7(2):3, 2004.
+\bibitem{hirschhorn2008fitzroy}
+Michael Hirschhorn.
+\newblock A letter from fitzroy house.
+\newblock {\em American Mathematical Monthly}, 115, 06 2008.
 
 \bibitem{marmon2005hexagonal}
 Oscar Marmon.
@@ -53,10 +59,5 @@ Neil James~Alexander Sloane.
 \newblock The {O}n-{L}ine {E}ncyclopedia of {I}nteger {S}equences.
 \newblock \href{https://oeis.org}.
 \newblock Sequence \href{https://oeis.org/A003136}{A003136}.
-
-\bibitem{wiki:circulant_matrix}
-{Wikipedia contributors}.
-\newblock Circulant matrix --- {Wikipedia}{,} the free encyclopedia, 2018.
-\newblock [Online; accessed 19-September-2018].
 
 \end{thebibliography}

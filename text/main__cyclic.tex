@@ -1,0 +1,96 @@
+Let us consider \eqref{apparatus:eq:dsystem} in matrix form 
+\begin{equation}
+\label{general:eq:matrix_eq}
+	D d = \bf v
+\end{equation}
+where $d = (d_0, d_1, \ldots, d_{v-1})^T$, $\bf{v} = (v^2-v, -v, -v, \ldots)^T$ and $D_{\mu\nu} = d_{\mu+\nu}$, i.e.\ it is the Cayley table of the group in question.
+
+For cyclic groups the matrix $D$ takes the form of an \emph{anticirculant} or \emph{left circulant} matrix:
+
+\begin{equation}
+	\label{general:eq:anticirculant_matrix}
+	D =
+	\begin{pmatrix}
+		d_0 & d_1 & d_2 & \cdots & d_{v-1} \\ 
+		d_1 & d_2 & d_3 & \cdots & d_0 \\
+		d_2 & d_3 & d_4 & \cdots & d_1 \\
+		\vdots & \vdots & \vdots & \ddots & \vdots \\
+		d_{v-2} & d_{v-1} & d_0 & \cdots & d_{v-3} \\
+		d_{v-1} & d_0 & d_1 & \cdots & d_{v-2} \\
+	\end{pmatrix}.
+\end{equation}
+
+We will use the discrete Fourier transform:
+\begin{equation}
+	\mathcal F (y)_m = \sum_{j=0}^{v-1} y_j \omega^{-jm}
+\end{equation}
+where $\omega = \exp(\frac{2\pi \imath}v)$. Let us consider an equation $Ax=b$ with anticirculant matrix $A$. Applying the discrete Fourier transform to $b$ we obtain
+
+\begin{equation}
+	\label{general:eq:fourier_image}
+	\mathcal F (b)_m = \mathcal F (a)_m \mathcal F ^*(x^*)_m,
+\end{equation}
+where $a$ is the first row of $A$.
+
+This is particulary useful for equation \eqref{general:eq:matrix_eq} as the vector $d$ is also the first row of matrix $D$. The image of $\bf v=Dd$ is
+
+\begin{equation}
+	\mathcal{F} ({\bf v})_m = \mathcal{F}(d)_m \mathcal{F^*}(d^*)_m.
+\end{equation}
+
+As we are only interested in real $d$, we can simplify it further:
+
+\begin{equation}
+	\label{general:eq:dfourier}
+	\mathcal{F} ({\bf v})_m = \mathcal{F}(d)_m \mathcal{F^*}(d)_m = |\mathcal{F}(d)_m|^2.
+\end{equation}
+
+Since ${\bf v} = (v^2-v, -v, -v, \ldots)^T$ we can find that $\mathcal{F}({\bf v}) = (0,v^2,v^2,\ldots)$ and \eqref{general:eq:dfourier} becomes
+\begin{equation}
+	\label{gen:eq:dfourierfinal}
+	\left| \sum_{\mu=0}^{v-1} d_\mu \omega^{-\mu m} \right| = v (1-\delta_{m0}).
+\end{equation}
+
+\begin{theorem}
+	\label{general:theorem:split_cycles}
+	The digressions of a $(\mathbb Z_v, k)$-difference multiset are related via equation
+	\begin{equation}
+		\label{general:eq:split_cycles}
+		\left| 
+			\sum_{\kappa=0}^{v/m-1} \omega^{-m\kappa} \cdot 
+			\sum_{\nu=0}^{m-1}  d_{\kappa+\nu v/m} 
+		\right| = v
+	\end{equation}
+	where $m$ is any divisor of $v$ and $\omega = \exp(\frac{2\pi \imath}v)$.
+\end{theorem}
+
+\begin{proof}
+	The theorem statement is obtained from \eqref{gen:eq:dfourierfinal}.
+	
+	Select a divisor $m$ of $v$. Then $\delta_{m0}=0$ on the right hand side. The left hand side is transformed and grouped into smaller cycles using the following relation:
+	\begin{equation}
+		\omega^{-m (\kappa+\nu v/m)}
+		= \omega^{-m \kappa} \omega^{-\nu v}
+		= \omega^{-m \kappa}.
+	\end{equation}
+\end{proof}
+
+\begin{proposition}
+	\label{general:theorem:even_cyclic}
+	In difference multistes over cyclic groups of even cardinality $\sum_{\mu=0}^{v/2-1} d_{2\mu} = \pm \frac v2$ and $\sum_{\mu=0}^{v/2-1} d_{2\mu+1} = \mp \frac v2$.
+\end{proposition}
+\begin{proof}
+	Take \eqref{general:eq:split_cycles} for $m=v/2$
+	\begin{equation}
+		\left| 
+			\sum_{\mu=0}^{v/2-1} d_{2\mu} 
+			- \sum_{\mu=0}^{v/2-1} d_{2\mu+1} 
+		\right| = v.
+	\end{equation}
+	
+	I.e.\ the total of even $d_\mu$'s and the total of odd $d_\mu$'s differ by $v$. Take into account that the grand total is $\sum d_\mu = 0$ and the proposition follows.
+\end{proof}
+
+\begin{remark}
+	Similar relation also holds true for some (many? all?) other structures that are not cyclic groups. For example in $\mathbb Z_2 \times \mathbb Z_2$ with elements $\set{\mu, \nu, \zeta, \eta}$ in any order we have $(d_\mu+d_\nu)-(d_\zeta+d_\eta)=\pm 4$.
+\end{remark}

@@ -1,0 +1,163 @@
+There is only one group of three elements, $\mathbb Z_3$.
+
+For this group \eqref{apparatus:eq:parameters}, \eqref{apparatus:eq:ni} and \eqref{apparatus:eq:system} for a non-identity element form the following system of equations:
+
+\begin{equation}
+	\label{v3:eq:constraints}
+	\begin{cases}
+		3\lambda = k(k-1) \\
+		\sum n_\mu = k \\
+		\sum n_\mu n_{\mu+1} = \lambda.
+	\end{cases}
+\end{equation}
+
+We may now combine the equations to discover a relation between multiplicities of elements.
+
+\begin{theorem}
+	\label{v3:theorem:relations}
+	Multiplicities of different $(\mathbb Z_3,k)$-difference multiset elements $\mu$ un $\nu$ are related via
+	\begin{equation}
+		\label{v3:eq:relations}
+		n_{\mu} = \frac{k-n_\nu \pm \sqrt{\frac{4k-(k-3n_\nu)^2}{3}}}{2}.
+	\end{equation}
+\end{theorem}
+
+\begin{proof}
+	Take any element $\nu \in \mathbb Z_3$ and assign $c = n_\nu$. Let us denote the two remaining elements of $\mathbb Z_3$ by $\alpha$ and $\beta$. The system \eqref{v3:eq:constraints} can now be rewritten:
+	\begin{equation}
+		\begin{cases}
+			n_\alpha + n_\beta = k - c \\
+			n_\alpha n_\beta + c (n_\alpha + n_\beta)  = \lambda.
+		\end{cases}
+	\end{equation}
+
+That is equivalent to a quadratic equation with the solution for $n_{\mu}=n_{\alpha,\beta}$ presented in the statement of the theorem.
+
+%        Substitute $k'=k-c$ and $\lambda' = \lambda + c^2-kc$ to obtain
+	
+%        \begin{equation}
+%            \begin{cases}
+%                n_\alpha + n_\beta = k' \\
+%                n_\alpha n_\beta = \lambda'
+%            \end{cases}
+%        \end{equation}
+	
+%        Eliminating $n_\beta$ we arrive at a quadratic equation that is solved into
+	
+%        \begin{equation}
+%            n_{\alpha,\beta} = \frac{k' \pm \sqrt{k'^2-4\lambda'}}{2}
+%        \end{equation}
+	
+%        Undo the substitutions and you're done.
+\end{proof}
+
+It is useful to consider the multiplicities in the form $n_\mu = \frac{k+\Delta_\mu}{3}$, then \eqref{v3:eq:relations} can be rewritten as follows:
+
+\begin{equation}
+	\label{v3:eq:relations_delta}
+	n_{\mu} = \frac{k-n_\nu \pm \sqrt{\frac{4k-\Delta_\nu^2}{3}}}{2}.
+\end{equation}
+
+The behaviour of expression under the root is tied to a topic in number theory called Löschian numbers \cite{oeisA003136}. These numbers make an appearance in a variety of fields (see comments in \cite{oeisA003136}).
+
+\begin{definition}
+	\label{v3:def:loeschian}
+	Number $k$ is called a Löschian number iff $\exists a,b \in \mathbb Z \colon a^2+ab+b^2=k$.
+\end{definition}
+
+To eliminate unnecessary symmetries we will only consider $a,b$ such that $a \geq b \geq 0$. This doesn't change the scope of Löschian numbers:
+
+\begin{lemma}
+	\label{v3:lemma:loeschian}
+	For any Löschian number $k$ we can find $a,b \in \mathbb Z$ such that $a^2+ab+b^2=k$ and $a \geq b \geq 0$.
+\end{lemma}
+
+\begin{proof}
+	Let $k$ be a Löschian number, then there are $a',b'\in\mathbb Z\colon a'^2+a'b'+b'^2=k$. We can obtain $a,b$ with $a \geq b \geq 0$ as follows:
+	\begin{itemize}
+		\item If $a'b' \geq 0$, take $a=\max(|a'|,|b'|)$ and $b=\min(|a'|,|b'|)$.
+		\item If $a'b'<0$, set $c = \min(|a'|, |b'|)$ and take $a=\max(c,|a'+b'|)$, $b=\min(|c|, |a'+b'|)$.
+	\end{itemize}
+\end{proof}
+
+\begin{lemma}
+	\label{v3:lemma:square}
+	There exists $\Delta$ such that $\frac{4k-\Delta^2}{3}$ is a perfect square iff $k$ is a Löschian number.
+	
+	If $k=a^2+ab+b^2$, $a \geq b \geq 0$ is a Löschian number then $\frac{4k-\Delta^2}{3}$ is a square iff $\Delta$ has one of the values $\pm (2a+b), \pm (a+2b), \pm (a-b)$.
+\end{lemma}
+
+\begin{proof}
+	Substituting $k=a^2+ab+b^2$ and $\Delta=\pm (2a+b)$, $\pm (a+2b)$ or $\pm (a-b)$ in the expression $\frac{4k-\Delta^2}{3}$, we obtain, respectively, the squares $b^2$, $a^2$ or $(a+b)^2$.
+	
+	On the other hand, if $\frac{4k-\Delta^2}{3}$ is a square, denote:
+	\begin{equation}
+		z^2 = \frac{4k-\Delta^2}{3}.
+	\end{equation}
+	
+	Rewrite
+	\begin{equation}
+		\frac{3z^2 + \Delta^2}{4} = k.
+	\end{equation}
+	
+	Since $4$ divides $3z^2 + \Delta^2$, $z$ and $\Delta$ are of the same parity. Thus $2$ divides both $\Delta-z$ and $\Delta+z$.
+	
+	By taking the following values of $a,b$, we obtain that $a^2+ab+b^2=k$, $a \geq b \geq 0$ (thus $k$ is a Löschian number) and $\Delta$ is one of the expressions stated in lemma:
+	
+	\begin{itemize}
+		\item If $z \geq \Delta$ take $a=\frac{z+\Delta}{2}$ and $b=\frac{z-\Delta}{2}$. Then $a-b=\Delta$.
+		\item If $\Delta \geq z \geq \frac \Delta 3$ take $a=z$ and $b=\frac{\Delta-z}{2}$. Then $a+2b=\Delta$.
+		\item If $\frac \Delta 3 \geq z$ take $a=\frac{\Delta-z}{2}$ and $b=z$. Then $2a+b=\Delta$.
+	\end{itemize}
+\end{proof}
+
+Let's introduce the following notation for the three values used in lemma \ref{v3:lemma:square}. The rest can be expressed as $-\Delta_i$:
+\begin{equation}
+	\label{v3:eq:deltas}
+	\Delta_\alpha = 2a+b, \Delta_\beta = -a-2b, \Delta_\gamma = -a+b
+\end{equation}
+
+These $\Delta_i$ will be used in the following theorem and $\alpha$, $\beta$ and $\gamma$ are labels that, as before, we use to label the elements of $\mathbb Z_3$ in arbitrary order. We can now state our main result which is both construction and existence criterion for $(\mathbb Z_3,k)$-difference multisets.
+
+\begin{theorem}
+	\label{v3:theorem:loeschian}
+	For every pair $a,b \in \mathbb Z$ such that $k=a^2+ab+b^2$ and $a \geq b \geq 0$ there are exactly $-(k+1) \mod 3$ (up to automorphisms) $(\mathbb Z_3,k)$-difference multisets and the multiplicities of their elements are
+	
+	\begin{itemize}
+		\item $n_\mu=\frac{k+\Delta_\mu}{3}$ for one and $n_\nu=\frac{k-\Delta_\nu}{3}$ for the other if $3 \mid k$.
+		\item $n_\mu=\frac{k+\Delta_\mu}{3}$ if $3 \nmid k$ un $b-a \equiv 1 \mod 3$.
+		\item $n_\mu=\frac{k-\Delta_\mu}{3}$ if $3 \nmid k$ un $a-b \equiv 1 \mod 3$.
+	\end{itemize}
+\end{theorem}
+
+\begin{proof}
+	According to lemma \ref{v3:lemma:square}, the right hand side of \eqref{v3:eq:relations_delta} is integer only if $k$ is a Löschian number and $\Delta_\mu$ is one of the listed on \eqref{v3:eq:deltas} or a negative of that.
+	
+	Insert the constructions listed in the statement of theorem into \eqref{v3:eq:relations} to check that these are indeed multiplicities that make up a difference multiset if the numbers are integer. One can also check that using $\Delta_\alpha$ to construct one of the multiplicities you will find $\Delta_\beta$ and $\Delta_\gamma$ used for the others and the same is true in any order.
+	
+	Considering $a$ and $b$ modulo $3$ one may check the following:
+	\begin{itemize}
+		\item If $a \equiv b \mod 3$ then $3 \mid k$ and all the multiplicities in both the constructions $n_\mu=\frac{k+\Delta_\mu}{3}$ and $n_\mu=\frac{k-\Delta_\mu}{3}$ are integers.
+		\item If $a \equiv b-1 \mod 3$ then $k \equiv 1 \mod 3$ and only the multiplicities constructed by $n_\mu=\frac{k+\Delta_\mu}{3}$ are all integer.
+		\item If $a \equiv b+1 \mod 3$ then $k \equiv 1 \mod 3$ and only the multiplicities constructed by $n_\mu=\frac{k-\Delta_\mu}{3}$ are all integer.
+	\end{itemize}
+\end{proof}
+
+\begin{remark}
+	Allowing $a,b$ such that $a \geq b \geq 0$ wouldn't hold, we'd obtain the same $\Delta_\alpha, \Delta_\beta, \Delta_\gamma$ in different order thus making the same difference multisets again (up to automorphism). This constraint is intended to exclude such symmetries.
+	Different $a \geq b \geq 0$ pairs with $a^2+ab+b^2=k$ will lead to different values of $a-b$ and thus all the constructions mentioned in \ref{v3:theorem:loeschian} will be distinct. Consequently the number of $(\mathbb Z_3,k)$-difference multisets will be proportional to the number of unique $a,b$ pairs (respecting constraints) and the coefficient of proportionality is $-(k+1) \mod 3$.
+\end{remark}
+
+\subsection{Estimating numbers}
+	The exact number of solutions is still a bit elusive. This question is now reduced to a number-theoretic question---how many unique solutions are there for $k=a^2+ab+b^2$ such that $a\geq b\geq 0$.
+	
+	It is supposedly known \cite{oeisA003136} and reportedly shown in \cite{berndt1992fitzroy}.
+
+	The number of solutions without the constraint is known \cite{marmon2005hexagonal}, supposedly also \cite{hirschhorn2008fitzroy} and references therein. Denote
+	\begin{equation}
+		k=3^\alpha p_1^{\alpha_1}p_2^{\alpha_2}\ldots q_1^{\beta_1}q_2^{\beta_2}\ldots
+	\end{equation}
+	
+	where $p_i$ are primes such that $p_i \equiv 1 \mod 3$ and $q_i$ are primes such that $q_i \equiv 2 \mod 3$. If any of the $\beta_i$ are odd, there are no integer solutions to $k=a^2+ab+b^2$. But if all of $\beta_i$ are even, the number of solutions is $6\prod (\alpha_i +1)$.
+	
+	It is hypothesised \cite{nair2004elementary} that the number of solutions (if every $\beta_i$ is even) having $a \geq b \geq 0$ is $1/2 + \prod (\alpha_i +1)/2$ if all the $\alpha_i$ are even and $\prod (\alpha_i +1)/2$ otherwise. We checked this to be true for a thousand Löschian numbers. However, for most of the Löschian numbers this remains unchecked.
