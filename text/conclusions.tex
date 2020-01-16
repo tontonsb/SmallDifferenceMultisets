@@ -1,21 +1,22 @@
-Here's a reference of difference multisets over small parameter values. Some trivial cases that formally satisfy the constraints (e.g. some produce every element 0 times) are also included as those have helped spotting patterns.
+We have found what are the difference multisets if the parameter values ar small. Here we present a list of our findings. Some trivial cases that formally satisfy the constraints (e.g. some produce every element 0 times) and quasigroup cases are also included as those have helped spotting patterns.
 
 \begin{tabular}{llr}
 \toprule
     Parameters & Difference multisets \\
 \midrule
-    $v = 0$ & Empty multiset works. \\
     $k = 0$ & Empty multiset. \\
-    $v = 1$ & Take the identity $k$ times for any $k$. \\
     $k = 1$ & Take single element, works for $v \geq 1$. \\
-    $\mathbb Z_2^i$ & See section \ref{sec:z2i}, possibly incomplete. \\
-    $\mathbb Z_3$ & See section \ref{sec:z3}. \\
-    $v = 3$ & See section \ref{sec:v3}. \\    
+    $v = 0$ & Empty multiset. \\
+    $v = 1$ & Take the identity $k$ times for any $k$. \\
+    $v = 2$ & Covered in Section \ref{sec:z2i} as a case of $\mathbb Z_2^i$. \\
+    $v = 3$ & See section \ref{sec:v3}. \\
+    $G=\mathbb Z_2^i$ & See section \ref{sec:z2i}, possibly incomplete. \\
+    $G=\mathbb Z_3$ & See section \ref{sec:z3}. \\
 \bottomrule
 \end{tabular}
 
 
-The case of difference multisets over $\mathbb Z_3$ (theorem \ref{v3:theorem:loeschian}) shows that not only the very trivial cases can be solved explicitly. Although it is not straightforward to generalize our methods for arbitrary $\mathbb Z_i$, solving the problem for an odd prime value of $i$ seems in the realm of possibility.
+The case of difference multisets over $\mathbb Z_3$ (theorem \ref{v3:theorem:loeschian}) shows that not only the very trivial cases can be solved explicitly. Although it is not straightforward to generalize our methods for arbitrary $\mathbb Z_i$, solving the problem for odd prime values of $i$ seems in the realm of possibility.
 
 Theorem \ref{general:theorem:limits} greatly narrows the space of options that has to be considered in computer searches thus allowing to inspect a wide range of difference multisets and draw conclusions through observations.
 
