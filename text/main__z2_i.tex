@@ -1,4 +1,4 @@
-Consider $\mathbb Z_2^i$ as an affine space over $\mathbb Z_2$. For a chosen affine frame $F$, each element $\mu\in\mathbb Z_2^i$ can be represented by its affine coordinates: $\mu=(\mu_1, \mu_2, \ldots, \mu_i)$. For $r\in\{1,2,\ldots,i\}$ we define a subspace $H_r^F$ as follows:
+Consider $\mathbb Z_2^i$ as an affine space over $\mathbb Z_2$. For a chosen affine frame $F$, each element $\mu\in\mathbb Z_2^i$ can be represented by its affine coordinates: $\mu=(\mu_1, \mu_2, \ldots, \mu_i)$. For $r\in\{1,2,\ldots,i\}$ we define subspaces $H_r^F$ and $\widetilde H_r^F$ as follows:
 
 \begin{equation}
     \mu \in H_r^F \iff 
@@ -7,6 +7,11 @@ Consider $\mathbb Z_2^i$ as an affine space over $\mathbb Z_2$. For a chosen aff
             \mu_r = 0
         \end{cases}
 \end{equation}
+
+\begin{equation}
+    \mu \in \widetilde H_r^F \iff 
+        \mu_j = 1 \text{ for } j \leq r
+\end{equation}
 and denote $\xi_r = \sum\limits_{j=0}^r (-2)^j=(1-(-2)^{r+1})/3$.
 
 \begin{theorem}
@@ -14,9 +19,9 @@ and denote $\xi_r = \sum\limits_{j=0}^r (-2)^j=(1-(-2)^{r+1})/3$.
     For an arbitrary affine frame $F$ of $\mathbb Z_2^i$ and integer $m \colon 0 < m < i$, the following construction produces a $(\mathbb Z_2^i, k)$-difference multiset iff $k$ is square and $v | \sqrt k$:
     \begin{enumerate}
         \item For each $\mu \in H_r^F$ where $r \leq m$, set $d_\mu = \xi_r$.
-        \item Select element $\nu \in \tilde H$ where $\tilde H$ is the subset containg elements that do not have their digression set yet: $\mu \in \tilde H \iff \mu \notin \bigcup\limits_{r \leq m} H_r$.
+        \item Select element $\nu \in \widetilde H_m^F$.
         \item Set $d_\nu = (-1)^m v + \xi_{m+1}$.
-        \item Set $d_\mu = \xi_{m+1}$ for all $\mu \in \tilde H$ such that $\mu \neq \nu$.
+        \item Set $d_\mu = \xi_{m+1}$ for all $\mu \in \widetilde H_m^F$ such that $\mu \neq \nu$.
     \end{enumerate}
 \end{theorem}
 
@@ -25,20 +30,18 @@ A difference multiset is also obtained if the opposite sign is used on every $d_
 \begin{proof}
 	For a selected $m \colon 0 < m < i$ this construction provides us with $2^{i-r}$ digressions of value $d_\mu=\xi_r$ for each $1 \leq r\leq m$ (none of these if $m=0$), $2^{i-m}-1$ digressions equal to $\xi_{m+1}$ and one digression equal to $(-1)^m 2^i+\xi_{m+1}$.
     
-    Equations $\sum d_\mu = 0$ and $\sum d_\mu^2 = v(v-1)$ can be shown to be satisfied inserting the values listed above. Relation \eqref{z2i:eq:xi} can be useful.
+    Equations $\sum d_\mu = 0$ and $\sum d_\mu^2 = v(v-1)$ can be shown to be satisfied inserting the values listed above.
     
     Equations \eqref{apparatus:eq:dsystem} are left to check for non-identity $\gamma$.
     
     Having $\gamma = (\gamma_1, \gamma_2, \ldots, \gamma_i)$ with $\gamma_g = 1$ for some index $g$ and $\gamma_r = 0$ for all $r < g$ we can observe that:
     \begin{itemize}
-        \item $\mu \in H_r \iff \gamma + \mu \in H_r$ if $r < g \lor g > m$;
-        \item $\mu \in H_r \iff \gamma + \mu \in H_g$ if $r > g \land g \leq m$;
-        \item $\mu \in H_g \iff \gamma + \mu \in H_r$ where $r>g$ if $g \leq m$.
+        \item $\mu \in H_r^F \iff \gamma + \mu \in H_r^F$ if $r < g \lor g > m$;
+        \item $\mu \in H_r^F \iff \gamma + \mu \in H_g^F$ if $r > g \land g \leq m$;
+        \item $\mu \in H_g^F \iff \gamma + \mu \in H_r^F$ where $r>g$ if $g \leq m$.
     \end{itemize}
     
-    The $H_F$ also counts as one of the $H_r$ subsets whenever $r<g$ is not required to be true, one could loosely treat it as $H_i$ subset.
-    
-    Depending on the choice of $\gamma$ the final sum can either contain $(2^{i-m}-1) \xi_{m+1}^2 + ((-1)^m 2^i + \xi_{m+1})^2$ or $(2^{i-m}-2) \xi_{m+1}^2 + 2\xi_{m+1}((-1)^m 2^i + \xi_{m+1})$ either of which evaluates to 
+    The $\widetilde H_m^F$ also counts as one of the $H_r$ subsets whenever $r<g$ is not required to be true.
     
     We shall consider $g\leq m$ first. The value of \eqref{apparatus:eq:dsystem} is:
     
@@ -79,32 +82,34 @@ A difference multiset is also obtained if the opposite sign is used on every $d_
 \end{remark}
 
 \begin{theorem}
-    There are no other difference multisets than those presented in Theorem \ref{z2i:theorem:construction} for $i < 4$.
+    There are no other difference multisets than those presented in Theorem \ref{z2i:theorem:construction} and Theorem \ref{regular:theorem:regular} for $i < 4$.
 \end{theorem}
 
 \begin{proof}
-    This result was found directly solving equations \eqref{apparatus:eq:di} and \eqref{apparatus:eq:dsystem}. For $\mathbb Z_2$ and $\mathbb Z_2 \times \mathbb Z_2$ it can be done by hand.
+    This result was found directly solving equations \eqref{apparatus:eq:di} and \eqref{apparatus:eq:dsystem}.
     
-    For the case of $\mathbb Z_2^3$ it was done with the help of a computer algebra system. The single-variable polynomial of Gröbner basis in the case of $\mathbb Z_2^3$ is
+    For $\mathbb Z_2$ it has already been shown before\cite{buratti1999old}.
+    
+    For $\mathbb Z_2 \times \mathbb Z_2$ it can also be done by hand.
+    
+    For the case of $\mathbb Z_2^3$ we accomplished it with the help of a computer algebra system. The single-variable polynomial of Gröbner basis in the case of $\mathbb Z_2^3$ is
     \begin{equation}
         d_\mu^8 - 84 d_\mu^6 + 1974 d_\mu^4 - 12916 d_\mu^2 + 11025
     \end{equation}
     for which the roots are $\pm\xi_1, \pm\xi_2, \pm\xi_3, \pm(8-\xi_1)$.
 \end{proof}
 
-We must mention that the result for $\mathbb Z_2$ was already known before\cite{buratti1999old}.
+
+Sekojošais jāpārdomā, ja vispār lietderīgi iekļaut.
 
 The construction provided in this section produces
 \begin{equation}
     2 \sum\limits_{j=2}^i 2^j \prod\limits_{l=j+1}^i (2^{l+1}-2)
 \end{equation}
-solutions for $d_\mu$ over $\mathbb Z_2^i$. The counting argument is that we can select $H_1$ in $2^{i+1}-2$ ways, $H_2$ in $2^i-2$ etc. until you stop and choose one of the remaining $2^j$ elements. And twice everything as you can flip the signs.
+solutions for $d_\mu$ over $\mathbb Z_2^i$. The counting argument is that we can select $H_1$ in $2^{i+1}-2$ ways, $H_2$ in $2^i-2$ etc. until you stop and choose one of the remaining $2^j$ elements. And twice everything as you can flip the signs. Beware that taking $m=i-1$ will reproduce the difference multisets that can be obtained by taking $m=i-2$.
 
 \begin{example}
-    Take $i=4$ and $m=2$. You will have eight $d_\mu=-1$, four $d_\mu=3$, three $d_\mu=-5$ and one $d_\mu=11$.
-\end{example}
-
-\begin{example}
-    \label{z2i:example:edge}
-    Let's take $i=4$ and $m=3$. You get half the digressions (eight) $d_\mu=-1$. You set another quarter---four digressions $d_\mu=3$. Then you set two $d_\mu=-5$. Halfspace with two elements remains. All except one are set to $d_\mu=11$. And the last one is $-v+11=-5$ Thus you end up with the same set of digressions as in the previous example.
+    Let us take $i=4$ and $m=2$. We get half the digressions equal to $\xi_1=-1$. Set another quarter---four digressions to $\xi_2=3$. Out of the last four we assign one $v+\xi_3=11$ and $\xi_3=-5$ for the other three.
+    
+    Let us now take $i=4$ and $m=3$ instead. The first twelve digressions are assigned in the same way. Half of the remaining four are set to $\xi_3=-5$. Then we select one out of the remaining subset to set it to $-v+\xi_4=-5$ and all the remaining (i.e.\ one) to $=\xi_4=11$. Thus we end up with the same set of digressions as in the previous case.
 \end{example}
