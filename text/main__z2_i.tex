@@ -21,24 +21,24 @@ and denote $\xi_r = \sum\limits_{j=0}^r (-2)^j=(1-(-2)^{r+1})/3$.
         \item For each $\mu \in H_r^F$ where $r \leq m$, set $d_\mu = \xi_r$.
         \item Select element $\nu \in \widetilde H_m^F$.
         \item Set $d_\nu = (-1)^m v + \xi_{m+1}$.
-        \item Set $d_\mu = \xi_{m+1}$ for all $\mu \in \widetilde H_m^F$ such that $\mu \neq \nu$.
+        \item Set $d_\mu = \xi_{m+1}$ for all $\mu \in \widetilde H_m^F\setminus\{\nu\}$.
     \end{enumerate}
+    A difference multiset is also obtained if the opposite sign is used on every $d_\mu$.
 \end{theorem}
 
-A difference multiset is also obtained if the opposite sign is used on every $d_\mu$.
-
 \begin{proof}
-	For a selected $m \colon 0 < m < i$ this construction provides us with $2^{i-r}$ digressions of value $d_\mu=\xi_r$ for each $1 \leq r\leq m$ (none of these if $m=0$), $2^{i-m}-1$ digressions equal to $\xi_{m+1}$ and one digression equal to $(-1)^m 2^i+\xi_{m+1}$.
+	For a selected $m \colon 0 < m < i$ this construction provides us with $2^{i-r}$ digressions of value $d_\mu=\xi_r$ for each $1 \leq r\leq m$, $2^{i-m}-1$ digressions equal to $\xi_{m+1}$ and one digression equal to $(-1)^m 2^i+\xi_{m+1}$.
     
-    Equations $\sum d_\mu = 0$ and $\sum d_\mu^2 = v(v-1)$ can be shown to be satisfied inserting the values listed above.
+    Equations $\sum d_\mu = 0$ and $\sum d_\mu^2 = v(v-1)$ are satisfied inserting the values listed above.
     
-    Equations \eqref{apparatus:eq:dsystem} are left to check for non-identity $\gamma$.
+    It remains to check the equations \eqref{apparatus:eq:dsystem} for non-identity $\gamma$.
     
-    Having $\gamma = (\gamma_1, \gamma_2, \ldots, \gamma_i)$ with $\gamma_g = 1$ for some index $g$ and $\gamma_r = 0$ for all $r < g$ we can observe that:
+%    Having $\gamma = (\gamma_1, \gamma_2, \ldots, \gamma_i)$ with $\gamma_g = 1$ for some index $g$ and $\gamma_r = 0$ for all $r < g$ we can observe that:
+    For $\gamma = (\gamma_1, \gamma_2, \ldots, \gamma_i)$ let $g$ be the smallest index for which $\gamma_g=1$. Then
     \begin{itemize}
         \item $\mu \in H_r^F \iff \gamma + \mu \in H_r^F$ if $r < g \lor g > m$;
         \item $\mu \in H_r^F \iff \gamma + \mu \in H_g^F$ if $r > g \land g \leq m$;
-        \item $\mu \in H_g^F \iff \gamma + \mu \in H_r^F$ where $r>g$ if $g \leq m$.
+        \item $\mu \in H_g^F \iff \gamma + \mu \in H_r^F$ for some $r>g$ if $g \leq m$.
     \end{itemize}
     
     The $\widetilde H_m^F$ also counts as one of the $H_r$ subsets whenever $r<g$ is not required to be true.
@@ -67,7 +67,7 @@ A difference multiset is also obtained if the opposite sign is used on every $d_
         \begin{split}
             \sum d_\mu d_{\gamma+\mu}
               = & \sum\limits_{r \leq m} \sum\limits_{\mu \in H_r} d_\mu
-                + \sum\limits_{\mu \in F} d_\mu d_{\gamma + \mu} \\
+                + \sum\limits_{\mu \in \widetilde H_m^F} d_\mu d_{\gamma + \mu} \\
               = & \sum\limits_{r\leq m} 2^{i-r} \xi_r^2
                 + (2^{i-m}-2) \xi_{m+1}^2 + 2\xi_{m+1}((-1)^m 2^i + \xi_{m+1}) \\
               = & -v.
@@ -78,7 +78,8 @@ A difference multiset is also obtained if the opposite sign is used on every $d_
 \end{proof}
 
 \begin{remark}
-    We could also allow to select $m=0$ in Theorem \ref{z2i:theorem:construction}. In that case the constructed difference multiset would be the same one encountered in Section \ref{sec:uni} and it would also produce  integer multiplicities for $k \equiv 1 \mod v$ or $k \equiv -1 \mod v$.
+    We could also allow to let $m=0$ in Theorem \ref{z2i:theorem:construction}. In that case the obtained difference multiset would be the one described in 
+Theorem \ref{regular:theorem:regular} and it would also produce  integer multiplicities for $k \equiv 1 \mod v$ or $k \equiv -1 \mod v$.
 \end{remark}
 
 \begin{theorem}
@@ -88,7 +89,7 @@ A difference multiset is also obtained if the opposite sign is used on every $d_
 \begin{proof}
     This result was found directly solving equations \eqref{apparatus:eq:di} and \eqref{apparatus:eq:dsystem}.
     
-    For $\mathbb Z_2$ it has already been shown before\cite{buratti1999old}.
+    For $\mathbb Z_2$ it has already been shown before \cite{buratti1999old}.
     
     For $\mathbb Z_2 \times \mathbb Z_2$ it can also be done by hand.
     
