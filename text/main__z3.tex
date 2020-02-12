@@ -59,21 +59,16 @@ To eliminate unnecessary symmetries we will only consider $a,b$ such that $a \ge
 	Let $k$ be a Löschian number, then there are $a',b'\in\mathbb Z\colon a'^2+a'b'+b'^2=k$. We can obtain $a,b$ with $a \geq b \geq 0$ as follows:
 	\begin{itemize}
 		\item If $a'b' \geq 0$, take $a=\max(|a'|,|b'|)$ and $b=\min(|a'|,|b'|)$.
-		\item If $a'b'<0$, set $c = \min(|a'|, |b'|)$ and take $a=\max(c,|a'+b'|)$, $b=\min(|c|, |a'+b'|)$.
+		\item If $a'b'<0$, set $c = \min(|a'|, |b'|)$ and take $a=\max(c,|a'+b'|)$, $b=\min(c, |a'+b'|)$.
 	\end{itemize}
 \end{proof}
 
-\begin{definition}
-    $\mathbb D_{ab}$ is the following multiset:
-    \begin{equation}
-        \mathbb D_{ab} = \set{2a+b, -a-2b, -a+b}
-    \end{equation}
-\end{definition}
+Let us denote $\mathbb D_{ab} = \set{2a+b, -a-2b, -a+b}$ (considered as a multiset: $b$ can be equal to 0).
 
 
 \begin{lemma}
 	\label{v3:lemma:square}
-	The value of expression $\frac{4k-\Delta^2}{3}$ is a perfect square iff $k$ is a Löschian number and $\Delta\in \mathbb D_{ab} \cup \mathbb D_{ba}$ where $a,b$ are such that $a^2+ab+b^2=k$, $a \geq b \geq 0$.
+	The value of the expression $\frac{4k-\Delta^2}{3}$ is a perfect square iff $k$ is a Löschian number and $\Delta\in \mathbb D_{ab} \cup \mathbb D_{ba}$ where $a,b$ are such that $a^2+ab+b^2=k$, $a \geq b \geq 0$.
 \end{lemma}
 
 \begin{proof}
@@ -102,13 +97,14 @@ To eliminate unnecessary symmetries we will only consider $a,b$ such that $a \ge
 
 \begin{theorem}
 	\label{v3:theorem:loeschian}
-	The $(\mathbb Z_3,k)$-difference multisets exist iff $k=a^2+ab+b^2$, $a \geq b \geq 0$ is a Löschian number and the multiplicities of their elements are $n_\mu=\frac{k+\Delta_\mu}3$ where:
+	The $(\mathbb Z_3,k)$-difference multisets exist iff $k$ is a Löschian number. For each $a$, $b$ such that $k=a^2+ab+b^2$, $a \geq b \geq 0$, there are difference multisets with multiplicities $n_\mu=\frac{k+\Delta_\mu}3$ where:
 	
 	\begin{itemize}
-        \item If $3 \nmid k$ and $a \equiv b-1 \mod 3$ then multiset $\set{\Delta_\mu | \mu \in \mathbb Z_3}$ is $\mathbb D_{ab}$.
-        \item If $3 \nmid k$ and $a \equiv b+1 \mod 3$ then multiset $\set{\Delta_\mu | \mu \in \mathbb Z_3}$ is $\mathbb D_{ba}$.
-        \item If $3 \mid k$ then multiset $\set{\Delta_\mu | \mu \in \mathbb Z_3}$ can be either $\mathbb D_{ab}$ or $\mathbb D_{ba}$.
+        \item If $3 \nmid k$ and $a \equiv b-1 \mod 3$ then $\set{\Delta_\mu | \mu \in \mathbb Z_3}=\mathbb D_{ab}$.
+        \item If $3 \nmid k$ and $a \equiv b+1 \mod 3$ then $\set{\Delta_\mu | \mu \in \mathbb Z_3}=\mathbb D_{ba}$.
+        \item If $3 \mid k$ then $\set{\Delta_\mu | \mu \in \mathbb Z_3}$ can be either $\mathbb D_{ab}$ or $\mathbb D_{ba}$.
 	\end{itemize}
+There are no other difference multisets for the given $k$.
 \end{theorem}
 
 \begin{proof}
@@ -120,14 +116,14 @@ To eliminate unnecessary symmetries we will only consider $a,b$ such that $a \ge
 	
 	Considering $a$ and $b$ modulo $3$ we observe which cases produce integer multiplicities:
 	\begin{itemize}
-		\item If $a \equiv b \mod 3$ then $3 \mid k$ and all the multiplicities using either $\Delta \in \mathbb D_{ab}$ or $\Delta \in \mathbb D_{ab}$ are integers.
-		\item If $a \equiv b-1 \mod 3$ then $k \equiv 1 \mod 3$ and only the multiplicities constructed by using either $\Delta \in \mathbb D_{ab}$ are all integer.
-		\item If $a \equiv b+1 \mod 3$ then $k \equiv 1 \mod 3$ and only the multiplicities constructed by using either $\Delta \in \mathbb D_{ba}$ are all integer.
+		\item If $a \equiv b \mod 3$ then $3 \mid k$ and all the multiplicities using either $\Delta_\mu \in \mathbb D_{ab}$ or $\Delta_\mu \in \mathbb D_{ab}$ are integers.
+		\item If $a \equiv b-1 \mod 3$ then $k \equiv 1 \mod 3$ and only the multiplicities obtained by using $\Delta_\mu \in \mathbb D_{ab}$ are all integer.
+		\item If $a \equiv b+1 \mod 3$ then $k \equiv 1 \mod 3$ and only the multiplicities obtained by using $\Delta_\mu \in \mathbb D_{ba}$ are all integer.
 	\end{itemize}
 \end{proof}
 
 \begin{remark}
-    Without the $a \geq b \geq 0$ contraint we would repeatedly obtain the same $\mathbb D_{ab}$ with various $a,b$ pairs and produce the same difference multisets repeatedly.	But different $a \geq b \geq 0$ pairs with $a^2+ab+b^2=k$ will lead to different values of $a-b$ and thus all the constructions mentioned in \ref{v3:theorem:loeschian} will be distinct. Consequently the number of $(\mathbb Z_3,k)$-difference multisets will be proportional to the number of unique $a,b$ pairs (respecting constraints) and the coefficient of proportionality is $-(k+1) \mod 3$.
+    Without the $a \geq b \geq 0$ contraint we would obtain the same $\mathbb D_{ab}$ with various $a,b$ pairs and produce the same difference multisets repeatedly.	But different $a \geq b \geq 0$ pairs with $a^2+ab+b^2=k$ lead to different values of $a-b$ and thus all the constructions mentioned in \ref{v3:theorem:loeschian} are distinct. Consequently the number of $(\mathbb Z_3,k)$-difference multisets is proportional to the number of unique $a,b$ pairs (respecting constraints) and the coefficient of proportionality is $1$ if $k\equiv 1\pmod{3}$ and $2$ if $k\equiv 0\pmod{3}$.
 \end{remark}
 
 \subsection{Estimating numbers}
