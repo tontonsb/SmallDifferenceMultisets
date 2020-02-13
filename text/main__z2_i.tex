@@ -1,33 +1,33 @@
-Consider $\mathbb Z_2^m$ as an affine space over $\mathbb Z_2$. For a chosen affine frame $F$, each element $\mu\in\mathbb Z_2^m$ can be represented by its affine coordinates: $\mu=(\mu_1, \mu_2, \ldots, \mu_m)$. For $r\in\{1,2,\ldots,m\}$ we define subspaces $H_r^F$ and $\widetilde H_r^F$ as follows:
+Consider $\mathbb Z_2^m$ as an affine space over $\mathbb Z_2$. For a chosen affine frame $F$, each element $\mu\in\mathbb Z_2^m$ can be represented by its affine coordinates: $\mu=(\mu_1, \mu_2, \ldots, \mu_m)$. For $i\in\{1,2,\ldots,m\}$ we define subspaces $H_i^F$ and $\widetilde H_i^F$ as follows:
 
 \begin{equation}
-    \mu \in H_r^F \iff 
+    \mu \in H_i^F \iff 
         \begin{cases}
-            \mu_j = 1 & \text{for } j < r \\
-            \mu_r = 0
+            \mu_j = 1 & \text{for } j < i \\
+            \mu_i = 0
         \end{cases}
 \end{equation}
 
 \begin{equation}
-    \mu \in \widetilde H_r^F \iff 
-        \mu_j = 1 \text{ for } j \leq r
+    \mu \in \widetilde H_i^F \iff 
+        \mu_j = 1 \text{ for } j \leq i
 \end{equation}
-and denote $\xi_r = \sum\limits_{j=0}^r (-2)^j=(1-(-2)^{r+1})/3$.
+and denote $\xi_i = \sum\limits_{j=0}^i (-2)^j=(1-(-2)^{i+1})/3$.
 
 \begin{theorem}
     \label{z2i:theorem:construction}
-    For an arbitrary affine frame $F$ of $\mathbb Z_2^m$ and integer $i \colon 0 < i < m$, the following construction produces a $(\mathbb Z_2^m, k)$-difference multiset iff $k$ is square and $v | \sqrt k$:
+    For an arbitrary affine frame $F$ of $\mathbb Z_2^m$ and integer $r \colon 0 < r < m$, the following construction produces a $(\mathbb Z_2^m, k)$-difference multiset iff $k$ is square and $v | \sqrt k$:
     \begin{enumerate}
-        \item For each $\mu \in H_r^F$ where $r \leq i$, set $d_\mu = \xi_r$.
-        \item Select element $\nu \in \widetilde H_i^F$.
-        \item Set $d_\nu = (-1)^i v + \xi_{i+1}$.
-        \item Set $d_\mu = \xi_{i+1}$ for all $\mu \in \widetilde H_i^F\setminus\{\nu\}$.
+        \item For each $\mu \in H_i^F$ where $i \leq r$, set $d_\mu = \xi_i$.
+        \item Select element $\nu \in \widetilde H_r^F$.
+        \item Set $d_\nu = (-1)^r v + \xi_{r+1}$.
+        \item Set $d_\mu = \xi_{r+1}$ for all $\mu \in \widetilde H_r^F\setminus\{\nu\}$.
     \end{enumerate}
     A difference multiset is also obtained if the opposite sign is used on every $d_\mu$.
 \end{theorem}
 
 \begin{proof}
-	For a selected $i \colon 0 < i < m$ this construction provides us with $2^{m-r}$ digressions of value $d_\mu=\xi_r$ for each $r$ ($1 \leq r\leq i$), $2^{m-i}-1$ digressions equal to $\xi_{i+1}$ and one digression equal to $(-1)^i 2^m+\xi_{i+1}$.
+	For a selected $r \colon 0 < r < m$ this construction provides us with $2^{m-i}$ digressions of value $d_\mu=\xi_i$ for each $i$ ($1 \leq i\leq r$), $2^{m-r}-1$ digressions equal to $\xi_{r+1}$ and one digression equal to $(-1)^r 2^m+\xi_{r+1}$.
     
     It is easy to check that the equations $\sum d_\mu = 0$ and $\sum d_\mu^2 = v(v-1)$ are satisfied with these values.
     
@@ -35,67 +35,67 @@ and denote $\xi_r = \sum\limits_{j=0}^r (-2)^j=(1-(-2)^{r+1})/3$.
     
     For $\gamma = (\gamma_1, \gamma_2, \ldots, \gamma_m)$ let $s$ be the smallest index for which $\gamma_s=1$. Then we can observe the following behaviour of $\gamma + \mu$:
     \begin{itemize}
-        \item If $s > i$ then $\mu \in H_r^F \iff  \gamma + \mu \in H_r^F$ and $\mu \in \widetilde H_i^F \iff  \gamma + \mu \in \widetilde H_i^F$.
-        \item If $s \leq i \land r < s$ for then $\mu \in H_r^F \iff  \gamma + \mu \in H_r^F$.
-        \item If $s \leq i \land r = s$ then $\mu \in H_r^F \iff  \gamma + \mu \in \widetilde H_r^F$.
-        \item If $s \leq i \land r > s$ then $\mu \in H_r^F \iff  \gamma + \mu \in H_s^F$.
-        \item If $s \leq i$ then $\mu \in \widetilde H_i^F \iff \gamma + \mu \in H_s^F$
+        \item If $s > r$ then $\mu \in H_i^F \iff  \gamma + \mu \in H_i^F$ and $\mu \in \widetilde H_r^F \iff  \gamma + \mu \in \widetilde H_r^F$.
+        \item If $s \leq r \land i < s$ for then $\mu \in H_i^F \iff  \gamma + \mu \in H_i^F$.
+        \item If $s \leq r \land i = s$ then $\mu \in H_i^F \iff  \gamma + \mu \in \widetilde H_i^F$.
+        \item If $s \leq r \land i > s \land i \leq r$ then $\mu \in H_i^F \iff  \gamma + \mu \in H_s^F$.
+        \item If $s \leq r$ then $\mu \in \widetilde H_r^F \iff \gamma + \mu \in H_s^F$
     \end{itemize}
     
-    We shall consider the case $s\leq i$ first. The value of \eqref{apparatus:eq:dsystem} is evaluated as follows
+    We shall consider the case $s\leq r$ first. The value of \eqref{apparatus:eq:dsystem} is evaluated as follows
     
     \begin{equation}
         \begin{split}
             \sum d_\mu d_{\gamma+\mu}
-              = & \sum\limits_{r<s} \sum\limits_{\mu \in H_r^F} d_\mu d_{\gamma + \mu}
-                + \sum\limits_{r>s} \sum\limits_{\mu \in H_r^F} d_\mu d_{\gamma + \mu}
+              = & \sum\limits_{i<s} \sum\limits_{\mu \in H_i^F} d_\mu d_{\gamma + \mu}
+                + \sum\limits_{i>s} \sum\limits_{\mu \in H_i^F} d_\mu d_{\gamma + \mu}
                 + \sum\limits_{\mu \in H_s^F} d_\mu d_{\gamma + \mu}. \\
         \end{split}
     \end{equation}
     
-    In the second and third sum one of $\mu$ and $\gamma + \mu$ belongs to $H_s^F$ and the other belongs to $H_r^F$,
+    In the second and third sum one of $\mu$ and $\gamma + \mu$ belongs to $H_s^F$ and the other belongs to $H_i^F$,
 thus either $d_\mu$, or $d_{\gamma+\mu}$ is equal to $\xi_s$:
     
     \begin{equation}
         \begin{split}
             \sum d_\mu d_{\gamma+\mu}
-              = & \sum\limits_{r<s} \sum\limits_{\mu \in H_r^F} \xi_r^2
-                + 2\sum\limits_{r>s} \sum\limits_{\mu \in H_r^F} \xi_s d_\mu. \\
+              = & \sum\limits_{i<s} \sum\limits_{\mu \in H_i^F} \xi_i^2
+                + 2\sum\limits_{i>s} \sum\limits_{\mu \in H_i^F} \xi_s d_\mu. \\
         \end{split}
     \end{equation}
     
-    Since $\sum d_{\mu} = 0$, we can replace $\sum_{r>s} \sum_{\mu \in H_r^F} d_\mu$ with $-\sum_{r\leq s} \sum_{\mu \in H_r^F} d_\mu$ and substitute $d_\mu=\xi_r$:
+    Since $\sum d_{\mu} = 0$, we can replace $\sum_{i>s} \sum_{\mu \in H_i^F} d_\mu$ with $-\sum_{i\leq s} \sum_{\mu \in H_i^F} d_\mu$ and substitute $d_\mu=\xi_i$:
     
     \begin{equation}
         \begin{split}
             \sum d_\mu d_{\gamma+\mu}
-              = & \sum\limits_{r<s} \sum\limits_{\mu \in H_r^F} \xi_r^2
-                - 2 \xi_s \sum\limits_{r \leq s} \sum\limits_{\mu \in H_r^F} \xi_r \\
-              = & \sum\limits_{r<s} 2^{m-r} \xi_r^2
-                - 2 \xi_s \sum\limits_{r \leq s}  2^{m-r} \xi_r \\
+              = & \sum\limits_{i<s} \sum\limits_{\mu \in H_i^F} \xi_i^2
+                - 2 \xi_s \sum\limits_{i \leq s} \sum\limits_{\mu \in H_i^F} \xi_i \\
+              = & \sum\limits_{i<s} 2^{m-i} \xi_i^2
+                - 2 \xi_s \sum\limits_{i \leq s}  2^{m-i} \xi_i \\
               = & - v.
         \end{split}
     \end{equation}
     
-    Considering the other case with $s > i$ we get the following:
+    Considering the other case with $s > r$ we get the following:
     
     \begin{equation}
         \begin{split}
             \sum d_\mu d_{\gamma+\mu}
-              = & \sum\limits_{r \leq i} \sum\limits_{\mu \in H_r^F} d_\mu
-                + \sum\limits_{\mu \in \widetilde H_i^F} d_\mu d_{\gamma + \mu} \\
-              = & \sum\limits_{r\leq i} 2^{m-r} \xi_r^2
-                + (2^{m-i}-2) \xi_{i+1}^2 + 2\xi_{i+1}((-1)^i 2^m + \xi_{i+1}) \\
+              = & \sum\limits_{i \leq r} \sum\limits_{\mu \in H_i^F} d_\mu
+                + \sum\limits_{\mu \in \widetilde H_r^F} d_\mu d_{\gamma + \mu} \\
+              = & \sum\limits_{i\leq r} 2^{m-i} \xi_i^2
+                + (2^{m-r}-2) \xi_{r+1}^2 + 2\xi_{r+1}((-1)^r 2^m + \xi_{r+1}) \\
               = & -v.
         \end{split}
     \end{equation}
     
-    Lastly, by inserting $d_\mu = \xi_r$ into $n_\mu=\frac{k+d_\mu \sqrt k}v$ we can observe that $n_\mu$ is integer iff $v | \sqrt k$.
+    Lastly, by inserting $d_\mu = \xi_i$ into $n_\mu=\frac{k+d_\mu \sqrt k}v$ we can observe that $n_\mu$ is integer iff $v | \sqrt k$.
 \end{proof}
 
 \begin{remark}
-    We could also allow the value $i=0$ in Theorem \ref{z2i:theorem:construction}. In that case the obtained difference multiset would be the one described in 
-Theorem \ref{regular:theorem:regular} and it would also produce  integer multiplicities for $k \equiv 1 \mod v$ or $k \equiv -1 \mod v$.
+    We could also allow the value $r=0$ in Theorem \ref{z2i:theorem:construction}. In that case the obtained difference multiset would be the one described in 
+Theorem \ref{regular:theorem:regular} and it would also produce  integer multiplicities for $k \equiv 1 \pmod v$ or $k \equiv -1 \pmod v$.
 \end{remark}
 
 \begin{theorem}
@@ -140,16 +140,14 @@ Theorem \ref{regular:theorem:regular} and it would also produce  integer multipl
 \end{proof}
 
 
-Sekojošais (līdz nodaļas beigām) jāpārdomā: vai vispār lietderīgi iekļaut. Un, ja ir, tad jāpārlabo.
-
-The construction provided in this section produces
-\begin{equation}
-    2 \sum\limits_{j=2}^m 2^j \prod\limits_{l=j+1}^m (2^{l+1}-2)
-\end{equation}
-solutions for $d_\mu$ over $\mathbb Z_2^m$. The counting argument is that we can select $H_1$ in $2^{m+1}-2$ ways, $H_2$ in $2^m-2$ etc. until you stop and choose one of the remaining $2^j$ elements. And twice everything as you can flip the signs. Beware that taking $i=m-1$ will reproduce the difference multisets that can be obtained by taking $i=m-2$.
-
-\begin{example}
-    Let us take $m=4$ and $i=2$. We get half the digressions equal to $\xi_1=-1$. Set another quarter---four digressions to $\xi_2=3$. Out of the last four we assign one $v+\xi_3=11$ and $\xi_3=-5$ for the other three.
-    
-    Let us now take $m=4$ and $i=3$ instead. The first twelve digressions are assigned in the same way. Half of the remaining four are set to $\xi_3=-5$. Then we select one out of the remaining subset to set it to $-v+\xi_4=-5$ and all the remaining (i.e.\ one) to $=\xi_4=11$. Thus we end up with the same set of digressions as in the previous case.
-\end{example}
+% The construction provided in this section produces
+% \begin{equation}
+%     2 \sum\limits_{j=2}^m 2^j \prod\limits_{l=j+1}^m (2^{l+1}-2)
+% \end{equation}
+% solutions for $d_\mu$ over $\mathbb Z_2^m$. The counting argument is that we can select $H_1$ in $2^{m+1}-2$ ways, $H_2$ in $2^m-2$ etc. until you stop and choose one of the remaining $2^j$ elements. And twice everything as you can flip the signs. Beware that taking $i=m-1$ will reproduce the difference multisets that can be obtained by taking $i=m-2$.
+% 
+% \begin{example}
+%     Let us take $m=4$ and $i=2$. We get half the digressions equal to $\xi_1=-1$. Set another quarter---four digressions to $\xi_2=3$. Out of the last four we assign one $v+\xi_3=11$ and $\xi_3=-5$ for the other three.
+%     
+%     Let us now take $m=4$ and $i=3$ instead. The first twelve digressions are assigned in the same way. Half of the remaining four are set to $\xi_3=-5$. Then we select one out of the remaining subset to set it to $-v+\xi_4=-5$ and all the remaining (i.e.\ one) to $=\xi_4=11$. Thus we end up with the same set of digressions as in the previous case.
+% \end{example}

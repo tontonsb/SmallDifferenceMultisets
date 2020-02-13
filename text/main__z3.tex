@@ -48,6 +48,8 @@ The behaviour of expression under the root is tied to a topic in number theory c
 	Number $k$ is called a Löschian number iff $\exists a,b \in \mathbb Z \colon a^2+ab+b^2=k$.
 \end{definition}
 
+
+
 To eliminate unnecessary symmetries we will only consider $a,b$ such that $a \geq b \geq 0$. This doesn't change the scope of Löschian numbers:
 
 \begin{lemma}
@@ -100,8 +102,8 @@ Let us denote $\mathbb D_{ab} = \set{2a+b, -a-2b, -a+b}$ (considered as a multis
 	The $(\mathbb Z_3,k)$-difference multisets exist iff $k$ is a Löschian number. For each $a$, $b$ such that $k=a^2+ab+b^2$, $a \geq b \geq 0$, there are difference multisets with multiplicities $n_\mu=\frac{k+\Delta_\mu}3$ where:
 	
 	\begin{itemize}
-        \item If $3 \nmid k$ and $a \equiv b-1 \mod 3$ then $\set{\Delta_\mu | \mu \in \mathbb Z_3}=\mathbb D_{ab}$.
-        \item If $3 \nmid k$ and $a \equiv b+1 \mod 3$ then $\set{\Delta_\mu | \mu \in \mathbb Z_3}=\mathbb D_{ba}$.
+        \item If $3 \nmid k$ and $a \equiv b-1 \pmod 3$ then $\set{\Delta_\mu | \mu \in \mathbb Z_3}=\mathbb D_{ab}$.
+        \item If $3 \nmid k$ and $a \equiv b+1 \pmod 3$ then $\set{\Delta_\mu | \mu \in \mathbb Z_3}=\mathbb D_{ba}$.
         \item If $3 \mid k$ then $\set{\Delta_\mu | \mu \in \mathbb Z_3}$ can be either $\mathbb D_{ab}$ or $\mathbb D_{ba}$.
 	\end{itemize}
 There are no other difference multisets for the given $k$.
@@ -116,28 +118,28 @@ There are no other difference multisets for the given $k$.
 	
 	Considering $a$ and $b$ modulo $3$ we observe which cases produce integer multiplicities:
 	\begin{itemize}
-		\item If $a \equiv b \mod 3$ then $3 \mid k$ and all the multiplicities using either $\Delta_\mu \in \mathbb D_{ab}$ or $\Delta_\mu \in \mathbb D_{ab}$ are integers.
-		\item If $a \equiv b-1 \mod 3$ then $k \equiv 1 \mod 3$ and only the multiplicities obtained by using $\Delta_\mu \in \mathbb D_{ab}$ are all integer.
-		\item If $a \equiv b+1 \mod 3$ then $k \equiv 1 \mod 3$ and only the multiplicities obtained by using $\Delta_\mu \in \mathbb D_{ba}$ are all integer.
+		\item If $a \equiv b \pmod 3$ then $3 \mid k$ and all the multiplicities using either $\Delta_\mu \in \mathbb D_{ab}$ or $\Delta_\mu \in \mathbb D_{ab}$ are integers.
+		\item If $a \equiv b-1 \pmod 3$ then $k \equiv 1 \pmod 3$ and only the multiplicities obtained by using $\Delta_\mu \in \mathbb D_{ab}$ are all integer.
+		\item If $a \equiv b+1 \pmod 3$ then $k \equiv 1 \pmod 3$ and only the multiplicities obtained by using $\Delta_\mu \in \mathbb D_{ba}$ are all integer.
 	\end{itemize}
 \end{proof}
 
 \begin{remark}
-    Without the $a \geq b \geq 0$ contraint we would obtain the same $\mathbb D_{ab}$ with various $a,b$ pairs and produce the same difference multisets repeatedly.	But different $a \geq b \geq 0$ pairs with $a^2+ab+b^2=k$ lead to different values of $a-b$ and thus all the constructions mentioned in \ref{v3:theorem:loeschian} are distinct. Consequently the number of $(\mathbb Z_3,k)$-difference multisets is proportional to the number of unique $a,b$ pairs (respecting constraints) and the coefficient of proportionality is $1$ if $k\equiv 1\pmod{3}$ and $2$ if $k\equiv 0\pmod{3}$.
+    Without the $a \geq b \geq 0$ contraint we would obtain the same $\mathbb D_{ab}$ with various $a,b$ pairs and produce the same difference multisets repeatedly.	But different $a \geq b \geq 0$ pairs with $a^2+ab+b^2=k$ lead to different values of $a-b$ and thus all the constructions mentioned in Theorem \ref{v3:theorem:loeschian} are distinct. Consequently the number of $(\mathbb Z_3,k)$-difference multisets is proportional to the number of unique $a,b$ pairs (respecting constraints) and the coefficient of proportionality is $1$ if $k\equiv 1\pmod{3}$ and $2$ if $k\equiv 0\pmod{3}$. And there are no Löschian numbers that are congruent to $2$ modulo $3$, this can be observed considering all possibilities of $a-b$ modulo $3$ as in the proof of Theorem \ref{v3:theorem:loeschian}.
 \end{remark}
 
-\subsection{Estimating numbers}
-    Jāvērtē, vai šo apakšnodaļu vispār vajag...
-
-	The exact number of solutions is still a bit elusive. This question is now reduced to a number-theoretic question---how many unique solutions are there for $k=a^2+ab+b^2$ such that $a\geq b\geq 0$.
-	
-	It is supposedly known \cite{oeisA088534} and reportedly shown in \cite{berndt1992fitzroy}.
-
-	The number of solutions without the constraint is known \cite{marmon2005hexagonal}, supposedly also \cite{hirschhorn2008fitzroy} and references therein. Denote
-	\begin{equation}
-		k=3^\alpha p_1^{\alpha_1}p_2^{\alpha_2}\ldots q_1^{\beta_1}q_2^{\beta_2}\ldots
-	\end{equation}
-	
-	where $p_i$ are primes such that $p_i \equiv 1 \mod 3$ and $q_i$ are primes such that $q_i \equiv 2 \mod 3$. If any of the $\beta_i$ are odd, there are no integer solutions to $k=a^2+ab+b^2$. But if all of $\beta_i$ are even, the number of solutions is $6\prod (\alpha_i +1)$.
-	
-	It is hypothesised \cite{nair2004elementary} that the number of solutions (if every $\beta_i$ is even) having $a \geq b \geq 0$ is $1/2 + \prod (\alpha_i +1)/2$ if all the $\alpha_i$ are even and $\prod (\alpha_i +1)/2$ otherwise.
+% \subsubsection{Estimating numbers}
+%     Jāvērtē, vai šo apakšnodaļu vispār vajag...
+% 
+% 	The exact number of solutions is still a bit elusive. This question is now reduced to a number-theoretic question---how many unique solutions are there for $k=a^2+ab+b^2$ such that $a\geq b\geq 0$.
+% 	
+% 	It is supposedly known \cite{oeisA088534} and reportedly shown in \cite{berndt1992fitzroy}.
+% 
+% 	The number of solutions without the constraint is known \cite{marmon2005hexagonal}, supposedly also \cite{hirschhorn2008fitzroy} and references therein. Denote
+% 	\begin{equation}
+% 		k=3^\alpha p_1^{\alpha_1}p_2^{\alpha_2}\ldots q_1^{\beta_1}q_2^{\beta_2}\ldots
+% 	\end{equation}
+% 	
+% 	where $p_i$ are primes such that $p_i \equiv 1 \pmod 3$ and $q_i$ are primes such that $q_i \equiv 2 \pmod 3$. If any of the $\beta_i$ are odd, there are no integer solutions to $k=a^2+ab+b^2$. But if all of $\beta_i$ are even, the number of solutions is $6\prod (\alpha_i +1)$.
+% 	
+% 	It is hypothesised \cite{nair2004elementary} that the number of solutions (if every $\beta_i$ is even) having $a \geq b \geq 0$ is $1/2 + \prod (\alpha_i +1)/2$ if all the $\alpha_i$ are even and $\prod (\alpha_i +1)/2$ otherwise.
