@@ -1,14 +1,16 @@
-The concept of difference multisets can be generalized to non-abelian groups or even any other algebraic structures where \emph{differences} can be defined. Such structures are generally known as \emph{quasigroups}---algebras with a unique solution to $\gamma\cdot\mu=\nu$ (both when solving for $\gamma$ and when solving for $\mu$).
+The concept of difference multisets can be generalized to non-abelian groups or even any other algebraic structures where \emph{differences} can be defined. Such structures are generally known as \emph{quasigroups}---algebras with a unique solution to $\gamma\cdot\mu=\nu$ both when solving for $\gamma$ and when solving for $\mu$. The unique $\gamma$
+such that $\gamma\cdot\mu=\nu$ is called the right division $\nu/\mu$. Similarly the left division can be defined.
+Without loss of generality we shall consider the right division. 
 
-We shall consider right division, but the same logic can be applied to left division in the same manner. The element $\gamma$ of a quasigroup $Q$ must be obtained $\lambda$ times as $(\gamma\cdot\mu)/\mu$. The generalization of \eqref{apparatus:eq:system} is:
+Let $Q$ be a quasigroup. For a multiset $M$ over $Q$ to be a difference multiset, any element $\gamma\in Q$ must be obtained $\lambda$ times as $\nu/\mu$ where $\nu$, $\mu\in M$. Notice that if $\gamma=\nu/\mu$, then $\nu=\gamma\mu$. The generalization of equation \eqref{apparatus:eq:system} is:
 
     \begin{equation}
         \label{generalization:eq:system}
         \forall \gamma \in Q \colon \sum (n_\mu(n_{\gamma\mu}-\delta_{\mu,\gamma\mu})) = \lambda
-    \end{equation}\
+    \end{equation}
 which coincides with system \eqref{apparatus:eq:system} in case of loops (quasigroups with an identity element)---if there is an identity element then $\delta_{\gamma0}=\delta{\mu,\gamma\mu}$.
 
-The digression equation \eqref{apparatus:eq:dsystem} is generally more complex:
+The digression equation \eqref{apparatus:eq:dsystem} generalizes to something more complex:
     \begin{equation}
         \label{generalization:eq:dsystem}
         \forall \gamma \in Q \colon \sum (d_\mu (d_{\gamma\mu}-\frac{v\delta_{\mu,\gamma\mu}}{\sqrt k})-v\delta_{\mu,\gamma\mu}) = -v.
@@ -18,30 +20,28 @@ However, in the case of loops system \eqref{generalization:eq:dsystem} simplifie
 
 \subsection{Results}
 
-As the equation \eqref{apparatus:eq:dsystem} applies for loops, the Theorem \ref{general:theorem:limits} is true for all loops.
+As the equation \eqref{apparatus:eq:dsystem} applies for loops, Theorem \ref{general:theorem:limits} is true for all loops.
 
-Theorem \ref{regular:theorem:regular} is also true for loops as it is proved used the equations that also hold for loops. However, we can prove a stronger result.
+Theorem \ref{regular:theorem:regular} is also true for loops as it was proved using equations that hold for loops. However, it holds also if there is only a one-sided identity element.
 
 \begin{theorem}
         \label{generalization:theorem:regular}
-        The construction given in Theorem \ref{regular:theorem:regular} produces a difference multiset (with differences being the right divisions) iff $\exists \gamma \colon \forall \mu \colon \mu=\gamma\mu$.
+        Suppose $Q$ is a quasigroup with right division considered as difference. Then the construction given in Theorem \ref{regular:theorem:regular} produces a difference multiset iff $\exists \gamma \forall \mu \colon \mu=\gamma\mu$.
     \end{theorem}
     
     \begin{proof}
-        Consider a particular element $\gamma \in Q$. 
-        
-        Let $Q_\gamma$ be the subset of such elements for which $\gamma$ is left-identity-like:
-        \begin{equation}
-            \mu=\gamma\mu \iff \mu \in Q_\gamma
-        \end{equation}
-
+        For $\gamma \in Q$ let $Q_\gamma=\{\mu\in Q\mid \mu=\gamma\mu\}$.
         Denote $v_\gamma = |Q_\gamma|$ and $\overline{v_\gamma} = v - v_\gamma$.
+%be the subset of elements for which $\gamma$ behaves like left identity:
+%        \begin{equation}
+%            \mu=\gamma\mu \iff \mu \in Q_\gamma
+%        \end{equation}
         
-        We can rewrite \eqref{generalization:eq:dsystem} for $\gamma$:
+        We can rewrite equation \eqref{generalization:eq:dsystem} for $\gamma$:
         \begin{equation}
             \label{generalization:eq:dsystem_split}
-            \sum\limits_{\mu \in Q} (d_\mu (d_\mu-\frac v {\sqrt k})
-            + \sum\limits_{\mu \notin Q} d_\mu d_{\gamma\mu}
+            \sum\limits_{\mu \in Q_\gamma} (d_\mu (d_\mu-\frac v {\sqrt k})
+            + \sum\limits_{\mu \notin Q_\gamma} d_\mu d_{\gamma\mu}
              = v(v_\gamma - 1).
         \end{equation}
 
@@ -68,13 +68,13 @@ Theorem \ref{regular:theorem:regular} is also true for loops as it is proved use
         The above conditions ($v_\gamma$ always being $0$ or $v$) are satisfied only if there is a left identity element $\gamma$.
     \end{proof}
 
-    The same can be shown for left division difference multisets of same structure which require a right identity element.
+    Similarly it can be shown that left division difference multisets of same structure require a right identity element.
 
 \subsection{Other constructions over quasigroups of size 3}
     \label{sec:v3}
-    We can also consider $(\mathbb Z_3,k)$-sum multisets where the elements of $\mathbb Z_3$ must be produced as the sums of elements. This turns out to be a simple case.
+    Considering $\mathbb Z_3$ with difference as the quasigroup operation, we obtain $(\mathbb Z_3,k)$-sum multisets where the elements of $\mathbb Z_3$ must be produced as the sums of elements. This turns out to be a simple case.
 
-    Similarly to \eqref{generalization:eq:system} we start by writing down the ways to obtain each of the elements and requiring them to be equal ($\forall \gamma \in \mathbb Z_3 \colon  \lambda = \sum (n_\mu (n_{\gamma-\mu}-\delta_{\mu,\gamma-\mu}))$). Adding the $\sum n_\mu = k$ and using $3\lambda = k(k-1)$ we may form a system of equations:
+    Similarly to \eqref{generalization:eq:system} we start by writing down the ways to obtain each of the elements and requiring them to be equal ($\forall \gamma \in \mathbb Z_3 \colon  \lambda = \sum (n_\mu (n_{\gamma-\mu}-\delta_{\mu,\gamma-\mu}))$). Adding the equation $\sum n_\mu = k$ and using $3\lambda = k(k-1)$ we obtain a system of equations:
     
     \begin{equation}
         \label{generalizations:v3:eq:system}
@@ -88,7 +88,7 @@ Theorem \ref{regular:theorem:regular} is also true for loops as it is proved use
 
     The system \eqref{generalizations:v3:eq:system} obviously possesses symmetry with respect to all the elements of $\mathbb Z_3$ and this system can easily be solved explicitly---valid multisets of $n_\mu$ are $\set{\frac k 3, \frac k 3, \frac k 3}$ and $\set{\frac{k-1}{3}, \frac{k-1}{3}, \frac{k+2}{3}}$.
     
-    We can conclude that there can be at most one (up to automorphisms) $(\mathbb Z_3, k)$-sum multiset for a given value of $k$. Specifically there is one if $3 \mid k$ or $k \equiv 1 \pmod 3$ and the multiplicities of elements are $\set{\frac k 3, \frac k 3, \frac k 3}$ and $\set{\frac{k-1}{3}, \frac{k-1}{3}, \frac{k+2}{3}}$ respectively. And there are none if $k \equiv 2 \pmod 3$ which eerily reminds of the situations with difference multisets over $\mathbb Z_3$.
+    We can conclude that there can be at most one (up to automorphisms) $(\mathbb Z_3, k)$-sum multiset for a given value of $k$. Specifically there is one if $3 \mid k$ or $k \equiv 1 \pmod 3$ and the multiplicities of elements are $\set{\frac k 3, \frac k 3, \frac k 3}$ and $\set{\frac{k-1}{3}, \frac{k-1}{3}, \frac{k+2}{3}}$ respectively. And there are none if $k \equiv 2 \pmod 3$ similarly to the situation with difference multisets over $\mathbb Z_3$.
     
     If we consider any other quasigroup of order 3, it turns out that in every case the difference multisets and sum multisets give raise to either system \eqref{v3:eq:constraints} or the system \eqref{generalizations:v3:eq:system}. There are only 5 quasigroups of order 3 so this can be checked on a case by case basis. We have thus solved the problem for every quasigroup of size 3.
     
