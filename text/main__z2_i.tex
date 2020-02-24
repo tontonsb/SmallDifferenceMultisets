@@ -105,28 +105,40 @@ Theorem \ref{regular:theorem:regular} and it would also produce  integer multipl
 \begin{proof}
     This result was found by solving equations \eqref{apparatus:eq:di} and \eqref{apparatus:eq:dsystem}.
     
-    For $\mathbb Z_2$ it has already been shown before \cite{buratti1999old}.
+    For $\mathbb Z_2$ it has already been shown before by Buratti \cite{buratti1999old}.
     
-    We solved the $\mathbb Z_2 \times \mathbb Z_2$ and $\mathbb Z_2^3$ cases with the help of computer algebra system.
-    
-    For $\mathbb Z_2 \times \mathbb Z_2$ equations \eqref{apparatus:eq:di} and \eqref{apparatus:eq:dsystem} take the following form:
+    For $\mathbb Z_2 \times \mathbb Z_2$ our constructions produce a single digression equal to $\pm 3$ and the other three equal to $1$. Equations \eqref{apparatus:eq:di} and \eqref{apparatus:eq:dsystem} take the following form:
     
     \begin{equation}
+        \label{z2i:eq:z2z2}
         \begin{cases}
             d_{00} + d_{01} + d_{10} + d_{11} = 0 \\
             d_{00}^2 + d_{01}^2 + d_{10}^2 + d_{11}^2 = 12 \\
             2 d_{00}d_{01} + 2 d_{10}d_{11} = -4 \\
             2 d_{00}d_{10} + 2 d_{01}d_{11} = -4 \\
             2 d_{00}d_{11} + 2 d_{01}d_{10} = -4 \\
-        \end{cases}
+        \end{cases}.
     \end{equation}
+    
+    Clearly not all $d_\mu$ are $0$ and at least one digression is positive, at least one is negative. From the latter three equations we can observe that it is impossible to have two positive and two negative digressions so there is exactly one positive or exactly one negative digression. WLOG suppose $d_{00}$ is the only positive digression.
+    
+    It is easy to evaluate that $(d_{00}+d_{01})^2+(d_{01}+d_{11})^2=8$ using the above equations. Using $d_{01}+d_{11} = -(d_{00}+d_{01})$ from the first equation we obtain $2(d_{00}+d_{01})^2=8$ and $d_{00}+d_{01} = \pm 2$. The same can be shown about any pair of digressions.
+    
+    Three times the first equation of system \eqref{z2i:eq:z2z2} can be rewritten as follows:
+    \begin{equation*}
+        (d_{00}+d_{01}) + (d_{00}+d_{10}) + (d_{00}+d_{11}) + (d_{01}+d_{10}) + (d_{01}+d_{11}) + (d_{10}+d_{11}) = 0.
+    \end{equation*}
+    
+    We know that the summands are equal to $\pm 2$ so three of them must be equal to $+2$ and three to $-2$. The "$+2$" ones are the first three as they need to contain the positive digression $d_{00}$. The other digressions are then obviously equal and of value $-1$ as their pairs sum to $-2$. And $d_{00}$ is then $3$.
+    
+    If we had supposed there is a single negative digression, we would have obtained it to be $-3$ and the others would be $1$.
     
     For $\mathbb Z_2^3$ equations \eqref{apparatus:eq:di} and \eqref{apparatus:eq:dsystem} take the following form:
     
     \begin{equation}
         \begin{cases}
-            d_{000} + d_{001} + d_{010} + d_{011} d_{100} + d_{101} + d_{110} + d_{111} = 0 \\
-            d_{000}^2 + d_{001}^2 + d_{010}^2 + d_{011}^2 d_{100}^2 + d_{101}^2 + d_{110}^2 + d_{111}^2 = 56 \\
+            d_{000} + d_{001} + d_{010} + d_{011} + d_{100} + d_{101} + d_{110} + d_{111} = 0 \\
+            d_{000}^2 + d_{001}^2 + d_{010}^2 + d_{011}^2 + d_{100}^2 + d_{101}^2 + d_{110}^2 + d_{111}^2 = 56 \\
             2 d_{000}d_{001} + 2 d_{010}d_{011} + 2 d_{100}d_{101} + 2 d_{110}d_{111} = -8 \\
             2 d_{000}d_{010} + 2 d_{001}d_{011} + 2 d_{100}d_{110} + 2 d_{101}d_{111} = -8 \\
             2 d_{000}d_{011} + 2 d_{001}d_{010} + 2 d_{100}d_{111} + 2 d_{101}d_{110} = -8 \\
@@ -136,7 +148,7 @@ Theorem \ref{regular:theorem:regular} and it would also produce  integer multipl
         \end{cases}
     \end{equation}
     
-    The only solutions to these systems are the ones produced in Theorem \ref{z2i:theorem:construction} and Theorem \ref{regular:theorem:regular}.
+    We solved this case with the help of a computer algebra system. The only solutions to this system are the ones produced in Theorem \ref{z2i:theorem:construction} and Theorem \ref{regular:theorem:regular}.
 \end{proof}
 
 
