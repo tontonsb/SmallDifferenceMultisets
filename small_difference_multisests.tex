@@ -35,7 +35,7 @@
 
 
 \begin{document}
-\title{Difference multisets\thanks{Supported by ...}}
+\title{Difference multisets}
 \date{}
 \author{Juris Evertovskis and Juris Smotrovs\\
 \small Faculty of Computing, University of Latvia\\
@@ -44,7 +44,16 @@
 \maketitle
 	
 	\begin{abstract}
-		Difference multiset is a combinatorial design introduced by Buratti \cite{buratti1999old} and used to construct other combinatorial designs like regular difference families. In this paper we obtain multiple constructions and constraints for difference multisets. We also focused on a few particular cases with small parameter values and found all the difference multisets over some smaller algebraic structures. An interesting link between the difference multisets over $\mathbb Z_3$ and other topics was also discovered.
+		Difference multiset is a combinatorial design---a multiset
+		where the differences of elements produce every element of a group
+		in the same amount. In this paper we obtain multiple new
+		constructions of difference multisets as well as some constraints
+		on structure of difference multisets. We paid special attention
+		to few cases with small parameter values and managed to find all 
+		of the difference multisets over some smaller algebraic structures,
+		namely $\mathbb Z_3, \mathbb Z_2^2$ and $\mathbb Z_2^3$.
+		It turned out that there is a link between difference multisets
+		over $\mathbb Z_3$ and Löschian numbers.
 	\end{abstract}
 	
 	\keywords{Difference multisets, Difference covers, Löschian numbers}
@@ -62,8 +71,16 @@
     \input{text/generalizations}
 
     \section{Summary and conclusions}
-    \input{text/conclusions}
+	\input{text/conclusions}
+	
+	\section{Acknowledgements}
+	\input{text/acknowledgements}
     
 	\bibliographystyle{plain}
 	\bibliography{difference_multisets}
+
+	\appendix
+	\section{Calculation details for section \ref{sec:z2i}}
+	\label{sec:appendix_z2_i}
+	\input{text/appendix_z2_i}
 \end{document}

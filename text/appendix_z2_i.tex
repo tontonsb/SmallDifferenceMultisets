@@ -1,0 +1,181 @@
+In this appendix we show how the sums in equations \eqref{z2i:eq:appendixable1} and 
+\eqref{z2i:eq:appendixable2} are calculated.
+
+\subsection{Auxiliary results}
+
+For ease of reading let us repeat from \ref{sec:z2i} that 
+$i\in \set{1,2,\ldots,m}$ and the definition of $\xi_i$ is as follows:
+
+\begin{equation}
+	\xi_i = \frac{1-(-2)^{i+1}} 3.
+\end{equation}
+
+Evaluate the following expressions:
+
+\begin{equation}
+	\label{appendix:eq:xi1}
+	\xi_i^2
+	 = \frac 1 9 \left(
+		1 + (-2)^{i+2} + 2^{2i+2}
+	 \right);
+\end{equation}
+
+\begin{equation}
+	\label{appendix:eq:xi2}
+	\xi_i (\xi_i - 2 \xi_s)
+	 = -\frac 1 9 \left(
+		1 + (-2)^{s+2} - 2^{2i+2} - (-2)^{s+i+3}
+	 \right);
+\end{equation}
+
+\begin{equation}
+	\label{appendix:eq:xi3}
+	\xi_{r+1} (\xi_{r+1} + 2(-2)^r)
+	= \frac 1 9 \left(
+		1 + (-2)^{r+1} + (-2)^{2r+3}
+	\right)
+\end{equation}
+
+We will also need the values of the following sums:
+
+\begin{equation}
+	\label{appendix:eq:sum1}
+	\sum\limits_{i<s} 2^{-i} = 1 - 2^{1-s};
+\end{equation}
+
+\begin{equation}
+	\label{appendix:eq:sum2}
+	\sum\limits_{i<s}  2^{-i} (-2)^{s+2}
+	= (-1)^s (2^{s+2} - 2^3);
+\end{equation}
+
+\begin{equation}
+	\label{appendix:eq:sum3}
+	\sum\limits_{i<s} 2^{-i} 2^{2i+2}
+	= \sum\limits_{i<s} 2^{i+2}
+	= 2^{s+2} - 2^3;
+\end{equation}
+
+\begin{equation}
+	\label{appendix:eq:sum4}
+	\sum\limits_{i<s} 2^{-i} (-2)^{s+i+3}
+	= 2^{s+3} (-1)^{s+1} \sum\limits_{i<s} (-1)^i
+	= 2^{s+2} (1+(-1)^s);
+\end{equation}
+
+\begin{equation}
+	\label{appendix:eq:sum5}
+	\sum\limits_{i \leq r} 2^{-i} = 1 - 2^{-r};
+\end{equation}
+
+\begin{equation}
+	\label{appendix:eq:sum6}
+	\sum\limits_{i \leq r} 2^{-i} (-2)^{i+2}
+	= -2 (1 - (-1)^r);
+\end{equation}
+
+\begin{equation}
+	\label{appendix:eq:sum7}
+	\sum\limits_{i \leq r} 2^{-i} 2^{2i+2}
+	= 2^3 (2^r - 1).
+\end{equation}
+
+\subsection{Evaluation of expression in \eqref{z2i:eq:appendixable1}}
+
+Let us start by separating case of $i=s$ out of the sum, factoring out
+$2^m$ and grouping the terms. We can evaluate the obtained
+expression using the notes on $\xi_i$ from the previous section:
+
+\begin{equation}
+	\begin{split}
+		& \sum\limits_{i<s} 2^{m-i} \xi_i^2 - 2 \xi_s \sum\limits_{i \leq s}  2^{m-i} \xi_i \\
+		= & 2^m \left[
+			-2^{1-s} \xi_s^2 
+			+ \sum\limits_{i<s} 2^{-i} \xi_i (\xi_i - 2\xi_s)
+		\right] \\
+		= & - \frac{2^m}9 \left[
+			2^{1-s} (1-(-2)^{s+1})^2
+			+ \sum\limits_{i<s} 2^{-i} \left(
+				1 + (-2)^{s+2} - 2^{2i+2} - (-2)^{s+i+3}
+			\right)
+		\right].
+	\end{split}
+\end{equation}
+
+The sum can be expanded in terms from equations 
+\eqref{appendix:eq:sum1}--\eqref{appendix:eq:sum4} and evaluated
+as follows:
+
+\begin{equation}
+	\begin{split}
+		& \sum\limits_{i<s} 2^{-i} \left(
+			1 + (-2)^{s+2} - 2^{2i+2} - (-2)^{s+i+3}
+		\right) \\
+		= & -2^{s+3}  - 2^{1-s} - 2^3(-1)^s + 9.
+	\end{split}
+\end{equation}
+
+We can now finish the calculation:
+
+\begin{equation}
+	\begin{split}
+		& \sum\limits_{i<s} 2^{m-i} \xi_i^2 - 2 \xi_s \sum\limits_{i \leq s}  2^{m-i} \xi_i \\
+		= & - \frac{2^m}9 \left[
+			2^{1-s} (1+(-2)^{s+2} + 2^{2s+2})
+			- 2^{s+3}  - 2^{1-s} - 2^3(-1)^s + 9
+		\right] \\
+		= & -2^m.
+	\end{split}
+\end{equation}
+
+\subsection{Evaluation of expression in \eqref{z2i:eq:appendixable2}}
+
+Start by rearranging the terms and factoring out the $2^m$ and $2^{-r}$.
+
+\begin{equation}
+	\label{appendix:eq:2step1}
+	\begin{split}
+		& \sum\limits_{i\leq r} 2^{m-i} \xi_i^2
+			+ (2^{m-r}-2) \xi_{r+1}^2 + 2\xi_{r+1}((-1)^r 2^m + \xi_{r+1}) \\
+			= & \sum\limits_{i\leq r} 2^{m-i} \xi_i^2
+				+ 2^{m-r}\xi_{r+1}^2 + 2^{m+1} (-1)^r \xi_{r+1} \\
+			= & 2^m \left[
+				\sum\limits_{i\leq r} 2^{-i} \xi_i^2
+					+ 2^{-r}\xi_{r+1} \left(
+						\xi_{r+1} + 2 (-2)^r 
+					\right)
+			\right].
+	\end{split}
+\end{equation}
+
+The sum can be evaluated using results \eqref{appendix:eq:xi1} and
+\eqref{appendix:eq:sum5}--\eqref{appendix:eq:sum7}:
+
+\begin{equation}
+	\begin{split}
+		& \sum\limits_{i\leq r} 2^{-i} \xi_i^2 \\
+		= & \frac 1 9 \sum\limits_{i\leq r} 2^{-i} \left(
+			1 + (-2)^{i+2} + 2^{2i+2}
+		\right) \\
+		= & \frac 1 9 \left(
+			2^{r+3} - 2^{-r} + 2(-1)^r - 9
+		\right).
+	\end{split}
+\end{equation}
+
+The other term was precalculated in \eqref{appendix:eq:xi3}. And we obtain 
+the result:
+
+\begin{equation}
+	\begin{split}
+		& \sum\limits_{i\leq r} 2^{m-i} \xi_i^2
+			+ (2^{m-r}-2) \xi_{r+1}^2 + 2\xi_{r+1}((-1)^r 2^m + \xi_{r+1}) \\
+		= & \frac {2^m} 9 \left[
+			2^{r+3} - 2^{-r} + 2(-1)^r - 9
+			+ 2^{-r} \left(
+				1 + (-2)^{r+1} + (-2)^{2r+3}
+			\right)
+		\right] \\
+		= & -2^m.
+	\end{split}
+\end{equation}

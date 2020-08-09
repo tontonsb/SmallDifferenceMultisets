@@ -64,31 +64,39 @@ thus either $d_\mu$, or $d_{\gamma+\mu}$ is equal to $\xi_s$:
         \end{split}
     \end{equation}
     
-    Since $\sum d_{\mu} = 0$, we can replace $\sum_{i>s} \sum_{\mu \in H_i^F} d_\mu$ with $-\sum_{i\leq s} \sum_{\mu \in H_i^F} d_\mu$ and substitute $d_\mu=\xi_i$:
+	Since $\sum d_{\mu} = 0$, we can replace $\sum_{i>s} \sum_{\mu \in H_i^F} d_\mu$ with $-\sum_{i\leq s} \sum_{\mu \in H_i^F} d_\mu$ and substitute $d_\mu=\xi_i$.
+	We also substitute sums containing identical terms with multiplications:
     
-    \begin{equation}
+	\begin{equation}
+        \label{z2i:eq:appendixable1}
         \begin{split}
             \sum d_\mu d_{\gamma+\mu}
               = & \sum\limits_{i<s} \sum\limits_{\mu \in H_i^F} \xi_i^2
                 - 2 \xi_s \sum\limits_{i \leq s} \sum\limits_{\mu \in H_i^F} \xi_i \\
               = & \sum\limits_{i<s} 2^{m-i} \xi_i^2
                 - 2 \xi_s \sum\limits_{i \leq s}  2^{m-i} \xi_i \\
-              = & - v.
+              = & -2^m = - v.
         \end{split}
-    \end{equation}
-    
+	\end{equation}
+	
+	The details of getting $-2^m$ from the preceding expression are 
+	shown in Appendix \ref{sec:appendix_z2_i}.
+
     Considering the other case with $s > r$ we get the following:
     
     \begin{equation}
+        \label{z2i:eq:appendixable2}
         \begin{split}
             \sum d_\mu d_{\gamma+\mu}
               = & \sum\limits_{i \leq r} \sum\limits_{\mu \in H_i^F} d_\mu
                 + \sum\limits_{\mu \in \widetilde H_r^F} d_\mu d_{\gamma + \mu} \\
               = & \sum\limits_{i\leq r} 2^{m-i} \xi_i^2
                 + (2^{m-r}-2) \xi_{r+1}^2 + 2\xi_{r+1}((-1)^r 2^m + \xi_{r+1}) \\
-              = & -v.
+              = & -2^m = -v.
         \end{split}
-    \end{equation}
+	\end{equation}
+	
+	The details of getting $-2^m$ are once again in the Appendix \ref{sec:appendix_z2_i}.
     
     Lastly, by inserting $d_\mu = \xi_i$ into $n_\mu=\frac{k+d_\mu \sqrt k}v$ we can observe that $n_\mu$ is integer iff $v | \sqrt k$.
 \end{proof}
@@ -99,6 +107,7 @@ Theorem \ref{regular:theorem:regular} and it would also produce  integer multipl
 \end{remark}
 
 \begin{theorem}
+	\label{z2i:theorem:exclusive}
     There are no other difference multisets than those presented in Theorem \ref{z2i:theorem:construction} and Theorem \ref{regular:theorem:regular} for $m < 4$.
 \end{theorem}
 
