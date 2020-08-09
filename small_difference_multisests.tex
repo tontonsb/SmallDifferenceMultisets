@@ -1,8 +1,10 @@
-\documentclass{article}
+\documentclass{amsart}
 
+\usepackage[foot]{amsaddr}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
+
 \usepackage{braket}  % provides \set{ | }
 
 \usepackage{graphicx}
@@ -21,7 +23,6 @@
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{conjecture}[theorem]{Hypothesis}
 \newtheorem{proposition}[theorem]{Proposition}
 
 \theoremstyle{definition}
@@ -31,18 +32,17 @@
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 
-\providecommand{\keywords}[1]{\textbf{\textit{Keywords: }} #1}
-
-
 \begin{document}
-\title{Difference multisets}
-\date{}
-\author{Juris Evertovskis and Juris Smotrovs\\
-\small Faculty of Computing, University of Latvia\\
-{\small \tt e-mail: juris.evertovskis@lu.lv, juris.smotrovs@lu.lv}}
+	\title{Difference multisets}
 
-\maketitle
+	\author{Juris Evertovskis}
+	\email{juris.evertovskis@lu.lv}
+
+	\author{Juris Smotrovs}
+	\email{juris.smotrovs@lu.lv}
 	
+	\address{Faculty of Computing, University of Latvia}
+
 	\begin{abstract}
 		Difference multiset is a combinatorial design---a multiset $M$ over a 
 		group $G$ such that the differences of elements of $M$ produce every 
@@ -54,9 +54,12 @@
 		structures, e.g.\ $\mathbb Z_3, \mathbb Z_2^2$ and $\mathbb Z_2^3$. 
 		It turned out that there is a link between difference multisets over 
 		$\mathbb Z_3$ and Löschian numbers.
+
+		\smallskip
+		\noindent \textbf{\keywordsname.} Difference multisets, Difference covers, Löschian numbers
 	\end{abstract}
-	
-	\keywords{Difference multisets, Difference covers, Löschian numbers}
+
+	\maketitle
     
     \section{Introduction}
     \input{text/introduction}
@@ -72,15 +75,15 @@
 
     \section{Summary and conclusions}
 	\input{text/conclusions}
-	
-	\section{Acknowledgements}
-	\input{text/acknowledgements}
-    
-	\bibliographystyle{plain}
-	\bibliography{difference_multisets}
 
 	\appendix
 	\section{Calculation details for section \ref{sec:z2i}}
 	\label{sec:appendix_z2_i}
 	\input{text/appendix_z2_i}
+	
+	\section*{Acknowledgements}
+	\input{text/acknowledgements}
+    
+	\bibliographystyle{amsplain}
+	\bibliography{difference_multisets}
 \end{document}
