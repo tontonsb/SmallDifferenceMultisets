@@ -1,17 +1,17 @@
 # Fdb version 3
-["bibtex small_difference_multisests"] 1597003045 "small_difference_multisests.aux" "small_difference_multisests.bbl" "small_difference_multisests" 1597003047
+["bibtex small_difference_multisests"] 1597003045 "small_difference_multisests.aux" "small_difference_multisests.bbl" "small_difference_multisests" 1597005369
   "c:/texlive/2018/texmf-dist/bibtex/bst/amscls/amsplain.bst" 1536889294 25798 9b3546f2f237ee0ce4724eed95f954f4 ""
   "difference_multisets.bib" 1597002691 5209 2ed77b3949c164307ded186649d0d5ab ""
-  "small_difference_multisests.aux" 1597003047 9389 4d99abf769dc66d8b9de438a1dc06b7b ""
+  "small_difference_multisests.aux" 1597005369 9389 4d99abf769dc66d8b9de438a1dc06b7b ""
   (generated)
-  "small_difference_multisests.bbl"
   "small_difference_multisests.blg"
-["pdflatex"] 1597003046 "c:/Users/juris/Documents/GitHub/SmallDifferenceMultisets/small_difference_multisests.tex" "c:/Users/juris/Documents/GitHub/SmallDifferenceMultisets/small_difference_multisests.pdf" "small_difference_multisests" 1597003047
+  "small_difference_multisests.bbl"
+["pdflatex"] 1597005367 "c:/Users/juris/Documents/GitHub/SmallDifferenceMultisets/small_difference_multisests.tex" "c:/Users/juris/Documents/GitHub/SmallDifferenceMultisets/small_difference_multisests.pdf" "small_difference_multisests" 1597005369
   "assets/boundingSurfaces.pdf" 1557456396 374125 42e8a990ec21df371f7cc5295d9fa64e ""
   "assets/surfacesIn2D.pdf" 1557456396 2536 ceefc916e6285844085704e0d3660bf4 ""
   "assets/surfacesIn3D.pdf" 1557456396 255483 f251e8651ccc53abbd7661d04647c793 ""
-  "c:/Users/juris/Documents/GitHub/SmallDifferenceMultisets/small_difference_multisests.aux" 1597003047 9389 4d99abf769dc66d8b9de438a1dc06b7b ""
-  "c:/Users/juris/Documents/GitHub/SmallDifferenceMultisets/small_difference_multisests.tex" 1597003040 2371 209f06f7a7631442f63b8eb8d62a6227 ""
+  "c:/Users/juris/Documents/GitHub/SmallDifferenceMultisets/small_difference_multisests.aux" 1597005369 9389 4d99abf769dc66d8b9de438a1dc06b7b ""
+  "c:/Users/juris/Documents/GitHub/SmallDifferenceMultisets/small_difference_multisests.tex" 1597005366 2373 defd710cd6236e81ef5046980ba3108f ""
   "c:/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1537008650 3332 103109f5612ad95229751940c61aada0 ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1536889388 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1536889388 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -102,10 +102,10 @@
   "c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1537012031 3001863 059c97b2fe3b78bc46a9a9a9cb1c8e90 ""
   "c:/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt" 1537012175 4217549 d1b7d599ac801364f1a66cd02cf88f0d ""
   "c:/texlive/2018/texmf.cnf" 1536891406 673 4ae7b2f49cee444c5343a45b5d0f169c ""
-  "small_difference_multisests.aux" 1597003047 9389 4d99abf769dc66d8b9de438a1dc06b7b ""
+  "small_difference_multisests.aux" 1597005369 9389 4d99abf769dc66d8b9de438a1dc06b7b ""
   "small_difference_multisests.bbl" 1597003046 2731 211efd738a2955e1d25245681aa67850 "bibtex small_difference_multisests"
-  "small_difference_multisests.out" 1597003047 1667 62d970f4aefdec33e228677c3c80c410 ""
-  "small_difference_multisests.tex" 1597003040 2371 209f06f7a7631442f63b8eb8d62a6227 ""
+  "small_difference_multisests.out" 1597005369 1667 62d970f4aefdec33e228677c3c80c410 ""
+  "small_difference_multisests.tex" 1597005366 2373 defd710cd6236e81ef5046980ba3108f ""
   "text/acknowledgements.tex" 1596941052 311 2c2f449fa1ab7cd8db4132e8a696f0db ""
   "text/appendix_z2_i.tex" 1596937291 4463 7b3aeae520308bf1b36023b4b496ec5b ""
   "text/conclusions.tex" 1596943156 1824 633060d4e66afc08d5e06845a5b0fc51 ""
@@ -119,9 +119,9 @@
   "text/main__z2_i.tex" 1596940722 10208 539b5c5c41a24101114f0c3d0b6b264e ""
   "text/main__z3.tex" 1581586510 8464 355fbe08db89a41e14b4e00bfe63636f ""
   (generated)
-  "small_difference_multisests.aux"
-  "small_difference_multisests.out"
-  "c:/Users/juris/Documents/GitHub/SmallDifferenceMultisets/small_difference_multisests.pdf"
-  "c:/Users/juris/Documents/GitHub/SmallDifferenceMultisets/small_difference_multisests.log"
   "small_difference_multisests.pdf"
+  "small_difference_multisests.out"
+  "small_difference_multisests.aux"
+  "c:/Users/juris/Documents/GitHub/SmallDifferenceMultisets/small_difference_multisests.pdf"
   "small_difference_multisests.log"
+  "c:/Users/juris/Documents/GitHub/SmallDifferenceMultisets/small_difference_multisests.log"
